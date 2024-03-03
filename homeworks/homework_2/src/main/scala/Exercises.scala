@@ -1,5 +1,4 @@
 object Exercises {
-
     /*ПРИМЕР*/
     /*Реализовать функцию, которая возвращает все целые числа в заданном диапазоне (от iForm до iTo), которые делятся
     на 3 или на 7.*/
@@ -16,7 +15,14 @@ object Exercises {
     /*Реализовать функцию, которая возвращает сумму всех целых чисел в заданном диапазоне (от iForm до iTo), которые делятся
     на 3 или на 5.*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
-    def sumOfDivBy3Or5(iFrom: Int, iTo: Int): Long = ???
+    def sumOfDivBy3Or5(iFrom: Int, iTo: Int): Int = {
+        var sum: Int = 0
+        for {i <- iFrom to iTo
+             if i % 3 == 0 || i % 5 == 0
+             } sum += i
+
+        sum
+    }
 
 
 
@@ -72,5 +78,9 @@ object Exercises {
         )
 
     def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] = ???
+
+    def main(array: Array[String]): Unit = {
+        println(sumOfDivBy3Or5(0, 7))
+    }
 
 }
