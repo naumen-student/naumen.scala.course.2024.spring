@@ -1,0 +1,28 @@
+PS C:\WINDOWS\system32> scala
+Welcome to Scala 3.4.0 (21.0.2, Java Java HotSpot(TM) 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> def hello(greeting: String, name: String): Unit = {
+     |   println(s"$greeting Scala! This is $name!")
+     | }
+def hello(greeting: String, name: String): Unit
+
+scala> hello("Hello", "Alexey Vlasov")
+Hello Scala! This is Alexey Vlasov!
+
+scala> hello("Hola", "Alexey Vlasov")
+Hola Scala! This is Alexey Vlasov!
+
+scala> hello("Guten tag", "Alexey Vlasov")
+Guten tag Scala! This is Alexey Vlasov!
+
+scala> hello("Hello", "vosalV yexelA")
+Hello Scala! This is vosalV yexelA!
+
+scala> hello("Hola", "vosalV yexelA")
+Hola Scala! This is vosalV yexelA!
+
+scala> hello("Guten tag", "vosalV yexelA")
+Guten tag Scala! This is vosalV yexelA!
+
+scala>
