@@ -47,6 +47,8 @@ scala> clear
   | longer explanation available when compiling with `-explain`
 1 error found
 
+
+#1
 scala> val name = "ildar tyakin"
 val name: String = ildar tyakin
 
@@ -56,6 +58,8 @@ val hello: String = Hello Scala! This is
 scala> println(s"$hello $name")
 Hello Scala! This is ildar tyakin
 
+
+#2
 scala> var hello1 = hello
 var hello1: String = Hello Scala! This is
 
@@ -68,6 +72,8 @@ hello1: String = Hola Scala! This is
 scala> println(s"$hello1 $name")
 Hola Scala! This is ildar tyakin
 
+
+#3
 scala> name.reverse()
 -- [E171] Type Error: ----------------------------------------------------------
 1 |name.reverse()
@@ -98,3 +104,10 @@ scala> s"$hello1 ${new StringBuilder(name).reverse().toString()}"
 
 scala> s"$hello1 ${new StringBuffer(name).reverse().toString()}"
 val res6: String = Hola Scala! This is nikayt radli
+
+
+scala> val a = hello + new StringBuffer(name).reverse().toString()
+val a: String = Hello Scala! This isnikayt radli
+
+scala> print(a)
+Hello Scala! This isnikayt radli~ 
