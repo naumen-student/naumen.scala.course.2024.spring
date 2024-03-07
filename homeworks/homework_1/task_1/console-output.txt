@@ -1,0 +1,45 @@
+C:\Users\rikgo>scala
+Welcome to Scala 2.13.13 (Java HotSpot(TM) 64-Bit Server VM, Java 21.0.1).
+Type in expressions for evaluation. Or try :help.
+
+scala> def GetGreetingPhrase(helloWord : String, name : String) : String = s"$helloWord Scala! This is $name"
+def GetGreetingPhrase(helloWord: String, name: String): String
+
+scala> var fullName = "Ovechkin Ilya"
+var fullName: String = Ovechkin Ilya
+
+scala> var engHello = "Hello"
+var engHello: String = Hello
+
+scala> print(GetGreetingPhrase(engHello, fullName))
+Hello Scala! This is Ovechkin Ilya
+scala> val spanHello = "Hola"
+val spanHello: String = Hola
+
+scala> print(GetGreetingPhrase(spanHello, fullName))
+Hola Scala! This is Ovechkin Ilya
+scala> val gerHello = "Guten tag"
+val gerHello: String = Guten tag
+
+scala> var engGreeting = GetGreetingPhrase(engHello, fullName)
+var engGreeting: String = Hello Scala! This is Ovechkin Ilya
+
+scala> var gerGreeting = engGreeting.replaceFirst("Hello", gerHello)
+var gerGreeting: String = Guten tag Scala! This is Ovechkin Ilya
+
+scala> print(getGreeting)
+             ^
+       error: not found: value getGreeting
+
+scala> print(gerGreeting)
+Guten tag Scala! This is Ovechkin Ilya
+scala>
+       print(GetGreetingPhrase(engHello, fullName.reverse))
+Hello Scala! This is aylI nikhcevO
+scala> print(GetGreetingPhrase(spanHello, fullName.reverse))
+Hola Scala! This is aylI nikhcevO
+scala> print(GetGreetingPhrase(engHello, fullName).replaceFirst("Hello", "Guten tag"))
+Guten tag Scala! This is Ovechkin Ilya
+scala> print(GetGreetingPhrase(engHello, fullName.reverse).replaceFirst("Hello", "Guten tag"))
+Guten tag Scala! This is aylI nikhcevO
+scala>
