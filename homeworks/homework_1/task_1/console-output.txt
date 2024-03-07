@@ -1,0 +1,41 @@
+C:\Users\Grigoriy Babintsev>scala
+Welcome to Scala 2.12.10 (OpenJDK 64-Bit Server VM, Java 11.0.22).
+Type in expressions for evaluation. Or try :help.
+
+scala> def printHello(word: String, name: String): Unit = println(s"$word Scala! This is $name)
+<console>:1: error: unclosed string literal
+       def printHello(word: String, name: String): Unit = println(s"$word Scala! This is $name)
+                                                                                              ^
+
+scala> def printHello(word: String, name: String): Unit = println(s"$word Scala! This is $name")
+printHello: (word: String, name: String)Unit
+
+scala> val myName = "Grigoriy Babintsev"
+myName: String = Grigoriy Babintsev
+
+scala> val words = Array("Hello", "Hola", "Guten tag")
+words: Array[String] = Array(Hello, Hola, Guten tag)
+
+scala> words.foreach(arg => printHello(arg, name)
+     |
+     |
+You typed two blank lines.  Starting a new command.
+
+scala> words.foreach(arg => printHello(arg, name))
+<console>:14: error: not found: value name
+       words.foreach(arg => printHello(arg, name))
+                                            ^
+
+scala> words.foreach(arg => printHello(arg, myName))
+Hello Scala! This is Grigoriy Babintsev
+Hola Scala! This is Grigoriy Babintsev
+Guten tag Scala! This is Grigoriy Babintsev
+
+scala> words.foreach(arg => printHello(arg, myName.reverse))
+Hello Scala! This is vestnibaB yirogirG
+Hola Scala! This is vestnibaB yirogirG
+Guten tag Scala! This is vestnibaB yirogirG
+
+scala> :quit
+
+C:\Users\Grigoriy Babintsev>
