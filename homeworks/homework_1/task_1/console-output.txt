@@ -1,0 +1,113 @@
+C:\Users\ildar>scala
+Welcome to Scala 3.4.0 (11.0.22, Java OpenJDK 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> exit
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |exit
+  |^^^^
+  |Not found: exit - did you mean Unit? or perhaps wait or wait or wait?
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala>
+
+C:\Users\ildar>scala -version
+Scala code runner version 3.4.0 -- Copyright 2002-2024, LAMP/EPFL
+
+C:\Users\ildar>scala
+Welcome to Scala 3.4.0 (11.0.22, Java OpenJDK 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> 2 + 2
+val res0: Int = 4
+
+scala> 2 + '2'
+val res1: Int = 52
+
+scala> '2' + '2'
+val res2: Int = 100
+
+scala> "2"
+val res3: String = 2
+
+scala> "2" + "3"
+val res4: String = 23
+
+scala> "2" + 2
+val res5: String = 22
+
+scala> clear
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |clear
+  |^^^^^
+  |Not found: clear
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+
+#1
+scala> val name = "ildar tyakin"
+val name: String = ildar tyakin
+
+scala> val hello = "Hello Scala! This is"
+val hello: String = Hello Scala! This is
+
+scala> println(s"$hello $name")
+Hello Scala! This is ildar tyakin
+
+
+#2
+scala> var hello1 = hello
+var hello1: String = Hello Scala! This is
+
+scala> hello1 = hello1.replace("hello", "Hola")
+hello1: String = Hello Scala! This is
+
+scala> hello1 = hello1.replace("Hello", "Hola")
+hello1: String = Hola Scala! This is
+
+scala> println(s"$hello1 $name")
+Hola Scala! This is ildar tyakin
+
+
+#3
+scala> name.reverse()
+-- [E171] Type Error: ----------------------------------------------------------
+1 |name.reverse()
+  |^^^^^^^^^^^^^^
+  |missing argument for parameter i of method apply in class StringOps: (i: Int): Char
+1 error found
+
+scala> s"$hello1 ${StringBuilder(name).reverse()}"
+-- [E171] Type Error: ----------------------------------------------------------
+1 |s"$hello1 ${StringBuilder(name).reverse()}"
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |missing argument for parameter i of method apply in class StringBuilder: (i: Int): Char
+1 error found
+
+scala> s"$hello1 ${StringBuilder(name).reverse().toSrting()}"
+-- [E171] Type Error: ----------------------------------------------------------
+1 |s"$hello1 ${StringBuilder(name).reverse().toSrting()}"
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |missing argument for parameter i of method apply in class StringBuilder: (i: Int): Char
+1 error found
+
+scala> s"$hello1 ${new StringBuilder(name).reverse().toString()}"
+-- [E171] Type Error: ----------------------------------------------------------
+1 |s"$hello1 ${new StringBuilder(name).reverse().toString()}"
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |missing argument for parameter i of method apply in class StringBuilder: (i: Int): Char
+1 error found
+
+scala> s"$hello1 ${new StringBuffer(name).reverse().toString()}"
+val res6: String = Hola Scala! This is nikayt radli
+
+
+scala> val a = hello + new StringBuffer(name).reverse().toString()
+val a: String = Hello Scala! This isnikayt radli
+
+scala> print(a)
+Hello Scala! This isnikayt radli~ 
