@@ -1,4 +1,3 @@
-import Exercises.{Vector2D, sumCosines, sumScalars}
 import utest._
 
 object Test extends TestSuite{
