@@ -1,0 +1,31 @@
+Welcome to Scala 2.13.13 (OpenJDK 64-Bit Server VM, Java 21.0.2).
+Type in expressions for evaluation. Or try :help.
+
+scala> val name = "Olga"
+val name: String = Olga
+
+scala> val greeting = "Hello"
+val greeting: String = Hello
+
+scala> println("$greeting Scala! This is $name")
+$greeting Scala! This is $name
+
+scala> println(s"$greeting Scala! This is $name")
+Hello Scala! This is Olga
+
+scala> var greeting2 = "Hola"
+var greeting2: String = Hola
+
+scala> println(s"$greeting2 Scala! This is $name")
+Hola Scala! This is Olga
+
+scala> var greeting2 = "Guten tag"
+var greeting2: String = Guten tag
+
+scala> println(s"$greeting2 Scala! This is $name")
+Guten tag Scala! This is Olga
+
+scala> println(s"$greeting2 Scala! This is ${name.reverse}")
+Guten tag Scala! This is aglO
+
+scala> 
