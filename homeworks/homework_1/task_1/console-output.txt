@@ -1,0 +1,38 @@
+scala> var helloMessage: String = "Hello, Scala! Sashka here"
+var helloMessage: String = Hello, Scala! Sashka here
+
+scala> print(helloMessage)
+Hello, Scala! Sashka here~                                                                                           
+scala> var Spanishmode = helloMessage.replaceFirst("Hello", "Hola")
+var Spanishmode: String = Hola, Scala! Sashka here
+
+scala> print(Spanishmode)
+Hola, Scala! Sashka here~                                                                                            
+scala> var german = helloMessage.replaceFirst("Hello", "Guten Tag")
+var german: String = Guten Tag, Scala! Sashka here
+
+scala> print(german)
+Guten Tag, Scala! Sashka here~                                                                                       
+scala> var name = "Sashka"
+var name: String = Sashka
+
+scala> var unoReverse = name.reverse
+var unoReverse: String = akhsaS
+
+scala> helloMessage = helloMessage.replaceFirst(name, unoReverse)
+helloMessage: String = Hello, Scala! akhsaS here
+
+scala> Spanishmode = Spanishmode.replaceFirst(name, unoReverse)
+Spanishmode: String = Hola, Scala! akhsaS here
+
+scala> german = german.replaceFirst(name, unoReverse)
+german: String = Guten Tag, Scala! akhsaS here
+
+scala> println(helloMessage)
+Hello, Scala! akhsaS here
+
+scala> println(Spanishmode)
+Hola, Scala! akhsaS here
+
+scala> println(german)
+Guten Tag, Scala! akhsaS here
