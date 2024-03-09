@@ -1,3 +1,5 @@
+import scala.math._
+import scala.collection.immutable.ListMap
 object Exercises {
 
     /*ПРИМЕР*/
@@ -16,7 +18,24 @@ object Exercises {
     /*Реализовать функцию, которая возвращает сумму всех целых чисел в заданном диапазоне (от iForm до iTo), которые делятся
     на 3 или на 5.*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
-    def sumOfDivBy3Or5(iFrom: Int, iTo: Int): Long = ???
+    def sumOfDivBy3Or5(iFrom: Int, iTo: Int): Long = {
+        var sum: Long = 0;
+        for {i <- iFrom to iTo
+             if i % 3 == 0 || i % 5 == 0
+             } sum += i;
+        return sum;
+    }
+    def sumOfDivBy3Or5_way2(iFrom: Int, iTo: Int): Long = {
+        val sum3Start: Int = iFrom - (iFrom % 3) + 3;
+        val sum3End: Int = iTo - (iTo % 3);
+        val sum5Start: Int = iFrom - (iFrom % 5) + 5;
+        val sum5End: Int = iTo - (iTo % 5);
+        val n3 = (sum3End - sum3Start) / 3;
+        val n5 = (sum5End - sum5Start) / 5;
+        val sum3: Long = n3 * (sum3Start + sum3End) / 2;
+        val sum5 : Long = n5 * (sum5Start + sum5End) / 2;
+        return sum3 + sum5;
+    }
 
 
 
@@ -25,8 +44,24 @@ object Exercises {
     Число 80 раскладывается на множители 1 * 2 * 2 * 2 * 2 * 5, результат выполнения функции => Seq(2, 5).
     Число 98 можно разложить на множители 1 * 2 * 7 * 7, результат выполнения функции => Seq(2, 7).*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
-    def primeFactor(number: Int): Seq[Int] = ???
-
+    def primeFactor(number: Int): Seq[Int] = {
+        val possibleFactors =  fillPossibleFactors(number);
+        for (arg <- possibleFactors
+             if number % arg == 0)
+            yield arg;
+    }
+    def fillPossibleFactors(number: Int): Seq[Int] = {
+        var possibleFactors = List.range(2, number);
+        var index = 0;
+        var factor0 = possibleFactors(index);
+        while (index < possibleFactors.length) {
+            factor0 = possibleFactors(index);
+            possibleFactors = for (arg <- possibleFactors if arg % factor0 != 0 || arg == factor0)
+                yield arg;
+            index+= 1;
+        }
+        return possibleFactors;
+    }
 
 
     /*ЗАДАНИЕ III*/
@@ -40,15 +75,15 @@ object Exercises {
     def abs(vec: Vector2D): Double = java.lang.Math.sqrt(vec.x * vec.x + vec.y * vec.y)
     def scalar(vec0: Vector2D, vec1: Vector2D): Double = vec0.x * vec1.x + vec0.y * vec1.y
     def cosBetween(vec0: Vector2D, vec1: Vector2D): Double = scalar(vec0, vec1) / abs(vec0) / abs(vec1)
-    //def sumByFunc(leftVec0: Vector2D, leftVec1: Vector2D, ???, rightVec0: Vector2D, rightVec1: Vector2D) = ???
-    /*
+    def sumByFunc(leftVec0: Vector2D, leftVec1: Vector2D, function2: Function2[Vector2D, Vector2D, Double], rightVec0: Vector2D, rightVec1: Vector2D): Double = {
+        return function2(leftVec0, leftVec1) + function2(rightVec0, rightVec1);
+    }
+
     def sumScalars(leftVec0: Vector2D, leftVec1: Vector2D, rightVec0: Vector2D, rightVec1: Vector2D): Double =
         sumByFunc(leftVec0, leftVec1, scalar, rightVec0, rightVec1)
-    */
-    /*
+
     def sumCosines(leftVec0: Vector2D, leftVec1: Vector2D, rightVec0: Vector2D, rightVec1: Vector2D): Double =
         sumByFunc(leftVec0, leftVec1, cosBetween, rightVec0, rightVec1)
-    */
 
 
 
@@ -71,6 +106,12 @@ object Exercises {
             "Chrome" ->   (3,   7.18),   "Cesium" ->    (7,   1.873), "Zirconium" -> (3,   6.45)
         )
 
-    def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] = ???
+    def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] = {
+        //ListMap(ballsArray.toSeq.sortWith(x => calculateWeight(x)):);
+    }
+
+    def calculateWeight(tuple: (Int, Double)): Double = {
+        return tuple._2 * 4/3 * tuple._1 * tuple._1 * tuple._1 * math.Pi;
+    }
 
 }
