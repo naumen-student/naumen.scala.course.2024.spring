@@ -26,15 +26,19 @@ object Exercises {
         return sum;
     }
     def sumOfDivBy3Or5_way2(iFrom: Int, iTo: Int): Long = {
-        val sum3Start: Int = iFrom - (iFrom % 3) + 3;
+        val sum3Start: Int = if (iFrom % 3 == 0) iFrom else iFrom - (iFrom % 3) + 3;
         val sum3End: Int = iTo - (iTo % 3);
-        val sum5Start: Int = iFrom - (iFrom % 5) + 5;
+        val sum5Start: Int = if (iFrom % 5 == 0) iFrom else iFrom - (iFrom % 5) + 5;
         val sum5End: Int = iTo - (iTo % 5);
-        val n3 = (sum3End - sum3Start) / 3;
-        val n5 = (sum5End - sum5Start) / 5;
+        val n3 = ((sum3End - sum3Start) / 3) + 1;
+        val n5 = ((sum5End - sum5Start) / 5) + 1;
+        val sum15Start: Int = if (iFrom % 15 == 0) iFrom else iFrom - (iFrom % 15) + 15;
+        val sum15End: Int = iTo - (iTo % 15);
+        val n15 = ((sum15End - sum15Start) / 15) + 1;
+        val sum15: Long = n15 * (sum15Start + sum15End) / 2;
         val sum3: Long = n3 * (sum3Start + sum3End) / 2;
         val sum5 : Long = n5 * (sum5Start + sum5End) / 2;
-        return sum3 + sum5;
+        return sum3 + sum5 - sum15;
     }
 
 
@@ -46,12 +50,13 @@ object Exercises {
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
     def primeFactor(number: Int): Seq[Int] = {
         val possibleFactors =  fillPossibleFactors(number);
-        for (arg <- possibleFactors
+        val result = for (arg <- possibleFactors
              if number % arg == 0)
             yield arg;
+        return result;
     }
     def fillPossibleFactors(number: Int): Seq[Int] = {
-        var possibleFactors = List.range(2, number);
+        var possibleFactors = List.range(2, number + 1);
         var index = 0;
         var factor0 = possibleFactors(index);
         while (index < possibleFactors.length) {
@@ -107,9 +112,11 @@ object Exercises {
         )
 
     def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] = {
-        //ListMap(ballsArray.toSeq.sortWith(x => calculateWeight(x)):);
+        return ballsArray.toSeq.sortWith((x, y) => compare(x, y)).map(x => x._1);
     }
-
+    def compare(x: (String, (Int, Double)), y: (String, (Int, Double))): Boolean = {
+        return calculateWeight(x._2) > calculateWeight(y._2);
+    }
     def calculateWeight(tuple: (Int, Double)): Double = {
         return tuple._2 * 4/3 * tuple._1 * tuple._1 * tuple._1 * math.Pi;
     }
