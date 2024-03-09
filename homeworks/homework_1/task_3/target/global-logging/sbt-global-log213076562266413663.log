@@ -1,0 +1,21 @@
+[debug] > Exec(~run, None, None)
+[debug] > Exec(__runWatch console0, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(__preWatch console0, None, None)
+[debug] > Exec(run, None, None)
+[debug] Evaluating tasks: Compile / run
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 1 Scala source to C:\Users\fuelc\IdeaProjects\SbtExample\target\scala-2.13\classes ...
+[error] C:\Users\fuelc\IdeaProjects\SbtExample\src\main\scala\example\Main.scala:1:7: expected start of definition
+[error] @main def run() =
+[error]       ^
+[error] C:\Users\fuelc\IdeaProjects\SbtExample\src\main\scala\example\Main.scala:3:3: expected class or object definition
+[error]   println(s"The oldest person is ${ages.max}")
+[error]   ^
+[error] two errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed Mar 9, 2024 3:47:46 PM
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(__postWatch console0, None, None)
+[debug] > Exec(__waitWatch console0, None, None)
