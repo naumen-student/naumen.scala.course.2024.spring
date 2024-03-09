@@ -1,0 +1,34 @@
+C:\Users\MainUser>scala
+Welcome to Scala 3.4.0 (11.0.22, Java OpenJDK 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> def hello(name: String, hi_word: String): Unit = {
+     | println(s"$hi_word Scala, this is $name")
+     | }
+def hello(name: String, hi_word: String): Unit
+
+scala> hello(name = "Dmitry Rezov", hi_word = "Hello")
+Hello Scala, this is Dmitry Rezov
+
+scala> hello(name = "Dmitry Rezov", hi_word = "Hola")
+Hola Scala, this is Dmitry Rezov
+
+scala> hello(name = "Dmitry Rezov", hi_word = "Guten tag")
+Guten tag Scala, this is Dmitry Rezov
+
+scala> hello(name = "Dmitry Rezov", hi_word = "Ni hao")
+Ni hao Scala, this is Dmitry Rezov
+
+scala> hello(name = "vozeR yrtimD", hi_word = "Hello")
+Hello Scala, this is vozeR yrtimD
+
+scala> hello(name = "vozeR yrtimD", hi_word = "Hola")
+Hola Scala, this is vozeR yrtimD
+
+scala> hello(name = "vozeR yrtimD", hi_word = "Guten tag")
+Guten tag Scala, this is vozeR yrtimD
+
+scala> hello(name = "vozeR yrtimD", hi_word = "Ni hao")
+Ni hao Scala, this is vozeR yrtimD
+
+scala>
