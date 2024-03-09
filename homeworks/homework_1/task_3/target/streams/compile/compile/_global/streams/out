@@ -1,0 +1,13 @@
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E018] Syntax Error: D:\study_stuff\scala\src\main\scala\Main.scala:2:19 ----[0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m2 |[0m  [35m@main[0m [33mdef[0m [36mrun[0m() =[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m  |[0m                   ^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m  |[0m                   expression expected but [31mval[0m found[0m
+[0m[[0m[31merror[0m] [0m[0m[31m  |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m  |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: D:\study_stuff\scala\src\main\scala\Main.scala:4:35 -[0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m4 |[0m  println([31ms"The oldest person is [0m${ages.max}[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m  |[0m                                   ^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m  |[0m                                   Not found: ages[0m
+[0m[[0m[31merror[0m] [0m[0m[31m  |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m  |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
