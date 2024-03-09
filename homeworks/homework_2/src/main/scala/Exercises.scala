@@ -1,3 +1,5 @@
+import scala.annotation.tailrec
+
 object Exercises {
 
     /*ПРИМЕР*/
@@ -33,23 +35,13 @@ object Exercises {
     Число 98 можно разложить на множители 1 * 2 * 7 * 7, результат выполнения функции => Seq(2, 7).*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
     def primeFactor(number: Int): Seq[Int] = {
-        var num: Int = number
-        var res = Seq.empty[Int]
-        val sqrt1: Double = math.sqrt(number)
-        var mult: Int = 2
-        while (mult <= sqrt1) {
-            if (num % mult == 0) {
-                res = res.appended(mult)
-                num = num / mult
-            }
-            if (mult == 2) {
-                mult += 1
-            }
-            else {
-                mult += 2
-            }
+        @tailrec
+        def go(num: Int, divisor: Int = 2, seq: Seq[Int] = Nil): Seq[Int] = {
+            if (num == 1) seq
+            else if (num % divisor == 0) go(num / divisor, divisor, seq :+ divisor)
+            else go(num, divisor + 1, seq)
         }
-        res
+        go(number).distinct
     }
 
 
