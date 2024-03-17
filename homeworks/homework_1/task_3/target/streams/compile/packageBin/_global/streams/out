@@ -1,0 +1,13 @@
+[debug] Packaging C:\Users\alesh\IdeaProjects\test1\target\scala-3.4.0\test1_3-0.1.0-SNAPSHOT.jar ...
+[debug] Input file mappings:
+[debug] 	Main$package$.class
+[debug] 	  C:\Users\alesh\IdeaProjects\test1\target\scala-3.4.0\classes\Main$package$.class
+[debug] 	Main$package.class
+[debug] 	  C:\Users\alesh\IdeaProjects\test1\target\scala-3.4.0\classes\Main$package.class
+[debug] 	Main$package.tasty
+[debug] 	  C:\Users\alesh\IdeaProjects\test1\target\scala-3.4.0\classes\Main$package.tasty
+[debug] 	run.class
+[debug] 	  C:\Users\alesh\IdeaProjects\test1\target\scala-3.4.0\classes\run.class
+[debug] 	run.tasty
+[debug] 	  C:\Users\alesh\IdeaProjects\test1\target\scala-3.4.0\classes\run.tasty
+[debug] Done packaging.
