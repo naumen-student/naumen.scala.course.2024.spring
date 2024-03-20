@@ -1,0 +1,70 @@
+Loading...
+Welcome to the Ammonite Repl 3.0.0-M0-83-c70bfdfb (Scala 3.3.3 Java 17.0.8)
+@ val name = "Gleb"
+name: String = "Gleb"
+
+@ var greeting = "Hello"
+greeting: String = "Hello"
+
+@ var fullGreeting = "$greeting Scala! This is $name"
+fullGreeting: String = "$greeting Scala! This is $name"
+
+@ var fullGreeting = f"$greeting Scala! This is $name"
+fullGreeting: String = "Hello Scala! This is Gleb"
+
+@ println(fullGreeting)
+Hello Scala! This is Gleb
+
+
+@ greeting = "Hola"
+
+
+@ println(fullGreeting)
+Hello Scala! This is Gleb
+
+
+@ fullGreeting = f"$greeting Scala! This is $name"
+
+
+@ println(fullGreeting)
+Hola Scala! This is Gleb
+
+
+@ def makeGreetingsForName(name: String, languageGreetings: Array[String]) : Array[String] = {languageGreetings.map(greeting => f"$greeting Scala! This is $name")}
+defined function makeGreetingsForName
+
+@ val foreignLanguageGreetings = Array("Hola","Bonjour","Guten Tag","Privet")
+foreignLanguageGreetings: Array[String] = Array("Hola", "Bonjour", "Guten Tag", "Privet")
+
+@ var foreignLanguageFullGreetings = makeGreetingsForName(name,foreignLanguageGreetings)
+foreignLanguageFullGreetings: Array[String] = Array(
+  "Hola Scala! This is Gleb",
+  "Bonjour Scala! This is Gleb",
+  "Guten Tag Scala! This is Gleb",
+  "Privet Scala! This is Gleb"
+)
+
+@ foreignLanguageFullGreetings.foreach(greeting => println(greeting))
+Hola Scala! This is Gleb
+Bonjour Scala! This is Gleb
+Guten Tag Scala! This is Gleb
+Privet Scala! This is Gleb
+
+
+@ var foreignLanguageFullGreetings = makeGreetingsForName(name.reverse,foreignLanguageGreetings)
+
+foreignLanguageFullGreetings: Array[String] = Array(
+  "Hola Scala! This is belG",
+  "Bonjour Scala! This is belG",
+  "Guten Tag Scala! This is belG",
+  "Privet Scala! This is belG"
+)
+
+@ foreignLanguageFullGreetings.foreach(greeting => println(greeting))
+Hola Scala! This is belG
+Bonjour Scala! This is belG
+Guten Tag Scala! This is belG
+Privet Scala! This is belG
+
+
+@
