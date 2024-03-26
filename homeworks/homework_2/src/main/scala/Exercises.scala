@@ -10,7 +10,7 @@ object Exercises {
     def divBy3Or7(iFrom: Int, iTo: Int): Seq[Int] = {
         for {i <- iFrom to iTo
              if i % 3 == 0 || i % 7 == 0
-             } yield i
+       } yield i
     }
 
 
