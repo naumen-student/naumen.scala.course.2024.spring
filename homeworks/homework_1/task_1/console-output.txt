@@ -1,0 +1,90 @@
+Microsoft Windows [Version 10.0.19045.4046]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Gera>sbt console
+[warn] Neither build.sbt nor a 'project' directory in the current directory: "C:\Users\Gera"
+c) continue
+q) quit
+?q
+
+C:\Users\Gera>cd e
+The system cannot find the path specified.
+
+C:\Users\Gera>cd e:
+E:\
+
+C:\Users\Gera>e:
+
+E:\>cd scala
+
+E:\Scala>sbt console
+[warn] Neither build.sbt nor a 'project' directory in the current directory: "E:\Scala"
+c) continue
+q) quit
+?c
+[info] [launcher] getting org.scala-sbt sbt 1.9.9  (this may take some time)...
+[info] [launcher] getting Scala 2.12.18 (for sbt)...
+[warn] No sbt.version set in project/build.properties, base directory: E:\Scala
+[info] welcome to sbt 1.9.9 (Oracle Corporation Java 1.8.0_241)
+[info] set current project to scala (in build file:/E:/Scala/)
+[info] Updating
+https://repo1.maven.org/maven2/jline/jline/2.14.6/jline-2.14.6.pom
+  100.0% [##########] 19.4 KiB (111.6 KiB / s)
+[info] Resolved  dependencies
+[info] Fetching artifacts of
+https://repo1.maven.org/maven2/jline/jline/2.14.6/jline-2.14.6.jar
+  100.0% [##########] 262.5 KiB (1.6 MiB / s)
+[info] Fetched artifacts of
+https://repo1.maven.org/maven2/org/scala-sbt/util-interface/1.9.8/util-interface-1.9.8.pom
+  100.0% [##########] 2.5 KiB (39.6 KiB / s)
+https://repo1.maven.org/maven2/org/scala-sbt/compiler-bridge_2.12/1.9.6/compiler-bridge_2.12-1.9.6-sources.jar
+  100.0% [##########] 53.9 KiB (804.6 KiB / s)
+[info] Non-compiled module 'compiler-bridge_2.12' for Scala 2.12.18. Compiling...
+[info]   Compilation completed in 15.524s.
+[info] Starting scala interpreter...
+Welcome to Scala 2.12.18 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_241).
+Type in expressions for evaluation. Or try :help.
+
+scala> ╨╖╨║╤
+
+scala> println("Hello Scala! This is George");
+Hello Scala! This is George
+
+scala> println("Hola Scala! This is George");
+Hola Scala! This is George
+
+scala> val greeting = List("Hello", "Hola", "Privjet")
+<console>:1: error: unclosed string literal
+       val greeting = List("Hello", "Hola", Privjet")
+                                                    ^
+
+scala> val greeting = List("Hello", "Hola","Privjet")
+greeting: List[String] = List(Hello, Hola, Privjet)
+
+scala> val name = "George Lapp"
+name: String = George Lapp
+
+scala> val revName = name.reverse
+revName: String = ppaL egroeG
+
+scala> greering.foreach(greet=>println(greet+" Scala! This is"+name))
+<console>:13: error: not found: value greering
+       greering.foreach(greet=>println(greet+" Scala! This is"+name))
+       ^
+
+scala> greeting.foreach(greet=>println(greet+" Scala! This is"+name))
+Hello Scala! This isGeorge Lapp
+Hola Scala! This isGeorge Lapp
+Privjet Scala! This isGeorge Lapp
+
+scala> greeting.foreach(greet=>println(greet+" Scala! This is "+name))
+Hello Scala! This is George Lapp
+Hola Scala! This is George Lapp
+Privjet Scala! This is George Lapp
+
+scala> greeting.foreach(greet=>println(greet+" Scala! This is "+revName))
+Hello Scala! This is ppaL egroeG
+Hola Scala! This is ppaL egroeG
+Privjet Scala! This is ppaL egroeG
+
+scala>
