@@ -1,0 +1,50 @@
+Microsoft Windows [Version 10.0.19045.4046]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\Артём>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_401).
+Type in expressions for evaluation. Or try :help.
+
+scala> var name:String = "Artem Malevannyi"
+name: String = Artem Malevannyi
+
+scala> var hello:String = "Hello"
+hello: String = Hello
+
+scala> val message:String = " Scala! This is "
+message: String = " Scala! This is "
+
+scala> println(hello + message + name)
+Hello Scala! This is Artem Malevannyi
+
+scala> hello = "Hola"
+hello: String = Hola
+
+scala> println(hello + message + name)
+Hola Scala! This is Artem Malevannyi
+
+scala> hello = "Guten Tag"
+hello: String = Guten Tag
+
+scala> println(hello + message + name)
+Guten Tag Scala! This is Artem Malevannyi
+
+scala> name = name.reverse
+name: String = iynnavelaM metrA
+
+scala> println(hello + message + name)
+Guten Tag Scala! This is iynnavelaM metrA
+
+scala> hello = "Hola"
+hello: String = Hola
+
+scala> println(hello + message + name)
+Hola Scala! This is iynnavelaM metrA
+
+scala> hello = "Hello"
+hello: String = Hello
+
+scala> println(hello + message + name)
+Hello Scala! This is iynnavelaM metrA
+
+scala>
