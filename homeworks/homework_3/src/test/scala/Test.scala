@@ -1,3 +1,5 @@
+package src.main.scala
+
 import utest._
 
 object Test extends TestSuite {
