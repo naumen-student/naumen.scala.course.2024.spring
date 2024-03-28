@@ -15,10 +15,14 @@ class StringCell(str: String) extends Cell {
 class ReferenceCell(ix: Int, iy: Int, table: Table) extends Cell {
 
   private def getRef: Option[Cell] = table.getCell(ix, iy)
-  override def toString: String = {
+  private def toStringImpl(cellHistory: Set[ReferenceCell] = Set.empty): String = {
     table.getCell(ix, iy).map {
-      case referenceCell: ReferenceCell => if (referenceCell.getRef.contains(this)) "cyclic" else referenceCell.toString
+      case referenceCell: ReferenceCell => Some(cellHistory.contains(this)).filter(cell => cell).map(_ => "cyclic").getOrElse(referenceCell.toStringImpl(cellHistory ++ Set(referenceCell)))
       case cell: Cell => cell.toString
-    }getOrElse("outOfRange")
+    } getOrElse ("outOfRange")
   }
+  override def toString: String = {
+    toStringImpl()
+  }
+
 }
