@@ -1,0 +1,78 @@
+[debug] > Exec(~run, None, None)
+[debug] > Exec(__runWatch console0, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(__preWatch console0, None, None)
+[debug] > Exec(run, None, None)
+[debug] Evaluating tasks: Compile / run
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[warn] 
+[warn] 	Note: Unresolved dependencies path:
+[error] sbt.librarymanagement.ResolveException: Error downloading org.scala-lang.modules:scala-parser-combinators_3:1.1.2
+[error]   Not found
+[error]   Not found
+[error]   not found: C:\Users\danil\.ivy2\localorg.scala-lang.modules\scala-parser-combinators_3\1.1.2\ivys\ivy.xml
+[error]   not found: https://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_3/1.1.2/scala-parser-combinators_3-1.1.2.pom
+[error] 	at lmcoursier.CoursierDependencyResolution.unresolvedWarningOrThrow(CoursierDependencyResolution.scala:344)
+[error] 	at lmcoursier.CoursierDependencyResolution.$anonfun$update$38(CoursierDependencyResolution.scala:313)
+[error] 	at scala.util.Either$LeftProjection.map(Either.scala:573)
+[error] 	at lmcoursier.CoursierDependencyResolution.update(CoursierDependencyResolution.scala:313)
+[error] 	at sbt.librarymanagement.DependencyResolution.update(DependencyResolution.scala:60)
+[error] 	at sbt.internal.LibraryManagement$.resolve$1(LibraryManagement.scala:60)
+[error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$12(LibraryManagement.scala:134)
+[error] 	at sbt.util.Tracked$.$anonfun$lastOutput$1(Tracked.scala:74)
+[error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$20(LibraryManagement.scala:147)
+[error] 	at scala.util.control.Exception$Catch.apply(Exception.scala:228)
+[error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11(LibraryManagement.scala:147)
+[error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11$adapted(LibraryManagement.scala:128)
+[error] 	at sbt.util.Tracked$.$anonfun$inputChangedW$1(Tracked.scala:220)
+[error] 	at sbt.internal.LibraryManagement$.cachedUpdate(LibraryManagement.scala:161)
+[error] 	at sbt.Classpaths$.$anonfun$updateTask0$1(Defaults.scala:3801)
+[error] 	at scala.Function1.$anonfun$compose$1(Function1.scala:49)
+[error] 	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:63)
+[error] 	at sbt.std.Transform$$anon$4.work(Transform.scala:69)
+[error] 	at sbt.Execute.$anonfun$submit$2(Execute.scala:283)
+[error] 	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:24)
+[error] 	at sbt.Execute.work(Execute.scala:292)
+[error] 	at sbt.Execute.$anonfun$submit$1(Execute.scala:283)
+[error] 	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)
+[error] 	at sbt.CompletionService$$anon$2.call(CompletionService.scala:65)
+[error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+[error] 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+[error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+[error] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+[error] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+[error] 	at java.base/java.lang.Thread.run(Thread.java:1589)
+[error] java.nio.channels.OverlappingFileLockException
+[error] 	at java.base/sun.nio.ch.FileLockTable.checkList(FileLockTable.java:229)
+[error] 	at java.base/sun.nio.ch.FileLockTable.add(FileLockTable.java:123)
+[error] 	at java.base/sun.nio.ch.FileChannelImpl.lock(FileChannelImpl.java:1470)
+[error] 	at java.base/java.nio.channels.FileChannel.lock(FileChannel.java:1199)
+[error] 	at org.jetbrains.plugins.scala.indices.protocol.sbt.Locking$.lock(Locking.scala:23)
+[error] 	at org.jetbrains.plugins.scala.indices.protocol.sbt.Locking$FileLockingExt$.lock$extension(Locking.scala:51)
+[error] 	at org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin$.$anonfun$perConfig$2(SbtIntellijIndicesPlugin.scala:62)
+[error] 	at scala.Function1.$anonfun$compose$1(Function1.scala:49)
+[error] 	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:63)
+[error] 	at sbt.std.Transform$$anon$4.work(Transform.scala:69)
+[error] 	at sbt.Execute.$anonfun$submit$2(Execute.scala:283)
+[error] 	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:24)
+[error] 	at sbt.Execute.work(Execute.scala:292)
+[error] 	at sbt.Execute.$anonfun$submit$1(Execute.scala:283)
+[error] 	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)
+[error] 	at sbt.CompletionService$$anon$2.call(CompletionService.scala:65)
+[error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+[error] 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+[error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+[error] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+[error] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+[error] 	at java.base/java.lang.Thread.run(Thread.java:1589)
+[error] (update) sbt.librarymanagement.ResolveException: Error downloading org.scala-lang.modules:scala-parser-combinators_3:1.1.2
+[error]   Not found
+[error]   Not found
+[error]   not found: C:\Users\danil\.ivy2\localorg.scala-lang.modules\scala-parser-combinators_3\1.1.2\ivys\ivy.xml
+[error]   not found: https://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_3/1.1.2/scala-parser-combinators_3-1.1.2.pom
+[error] (Compile / compile) java.nio.channels.OverlappingFileLockException
+[error] Total time: 9 s, completed 11 мар. 2024 г., 21:59:02
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(__postWatch console0, None, None)
+[debug] > Exec(__waitWatch console0, None, None)

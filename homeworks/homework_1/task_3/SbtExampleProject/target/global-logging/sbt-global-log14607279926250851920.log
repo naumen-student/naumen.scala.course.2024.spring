@@ -1,0 +1,11 @@
+[debug] > Exec(~run, None, None)
+[error] server failed to start on local:sbt-server-a35e5e6bebc6a8dc97eb. java.io.IOException: Could not create lock for \\.\pipe\sbt-server-a35e5e6bebc6a8dc97eb_lock, error 5
+[debug] > Exec(__runWatch console0, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(__preWatch console0, None, None)
+[debug] > Exec(run, None, None)
+[debug] Evaluating tasks: Compile / run
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[warn] 
+[warn] 	Note: Unresolved dependencies path:
+[warn] Canceling execution...
