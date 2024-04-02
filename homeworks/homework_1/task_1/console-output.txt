@@ -1,0 +1,38 @@
+C:\Users\Daniil>scala
+Welcome to Scala 2.12.10 (OpenJDK 64-Bit Server VM, Java 11.0.16.1).
+Type in expressions for evaluation. Or try :help.
+
+scala> def printlnHello(hello: String, name: String) = println(s"$hello Scala! This is $name")
+printlnHello: (hello: String, name: String)Unit
+
+scala> val hello = "Hello"
+hello: String = Hello
+
+scala> val hola = "Hola"
+hola: String = Hola
+
+scala> val guten = "Guten tag"
+guten: String = Guten tag
+
+scala> val name = "Daniil Garipov"
+name: String = Daniil Garipov
+
+scala> printlnHello(hello, name)
+Hello Scala! This is Daniil Garipov
+
+scala> printlnHello(hola, name)
+Hola Scala! This is Daniil Garipov
+
+scala> printlnHello(guten, name)
+Guten tag Scala! This is Daniil Garipov
+
+scala> printlnHello(hello, name.reverse)
+Hello Scala! This is vopiraG liinaD
+
+scala> printlnHello(hola, name.reverse)
+Hola Scala! This is vopiraG liinaD
+
+scala> printlnHello(guten, name.reverse)
+Guten tag Scala! This is vopiraG liinaD
+
+scala>
