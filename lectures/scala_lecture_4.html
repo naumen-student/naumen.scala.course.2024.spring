@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Функциональное программирование. Концепция</title>
+
+    <meta name="description" content="Функциональное программирование. Концепция">
+    <meta name="author" content="Ивашкин Роман">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+    <link rel="stylesheet" href="css/hljs/vs.css" id="highlight-theme">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="footer">
+            <span class="corp-name"><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNAUMEN</b>
+        </div>
+
+        <div class="slides">
+            <section>
+                <h1>Функциональное программирование</h1>
+                <h1 style="color:orangered;">Концепция</h1>
+                <div style="position: relative; right: 0;">Роман Ивашкин</div>
+            </section>
+        </div>
+
+        <!--  -->
+
+        <div class="slides">
+            <section>
+            <h1>Императивный стиль программирования</h1>
+            <img src="img/lecture_4/slide2.png">
+            </section>
+        </div>
+
+        <!--  -->
+        
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide3.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <h1><span style="color: orangered;">Декларативное</span> программирование</h1>
+            </section>
+        </div>
+
+
+        <div class="slides">
+            <section>
+                <div style="margin: auto; margin-top: 12%; width: 60%; font-size: 40pt; word-wrap: break-word;">
+                    <b>Декларативное программирование</b> — парадигма программирования, в которой задается <span style="color: orangered;">спецификация</span> решения задачи, то есть описывается ожидаемый результат, а не способ его получения.
+                    <div style="margin-top: 20px; text-align: right;">@Wiki</div>
+                </div>
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide6.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide7.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide8.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide9.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide11.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide12.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide9.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide14.png">
+            </section>
+        </div>
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide15.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide16.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide17.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide18.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide19.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide20.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide21.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <h1><span style="color: orangered;">Функции</span> - альфа и омега</h1>
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <div style="margin: auto; margin-top: 12%; width: 60%; font-size: 40pt; word-wrap: break-word;">
+                    <b>Функциональное программирование</b> —  парадигма программирования, в которой процесс вычисления трактуется как вычисление значений функций <span style="color: orangered;">в математическом понимании</span> последних (в отличие от функций как подпрограмм в процедурном программировании).
+                    <div style="margin-top: 20px; text-align: right;">@Wiki</div>
+                </div>
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <div style="margin: auto; margin-top: 5%; width: 60%; font-size: 40pt; word-wrap: break-word;">
+                    <b>Функцией</b> называется соответствие между двумя множествами, при котором каждому элементу одного множества соответствует единственный элемент другого множества
+                </div>
+                <img width="40%" src="img/lecture_4/function.jpeg">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <h2 style="margin-top: 10%; margin-bottom: 3%;">Свойства функций в ФП из математики</h2>
+                <ul style="font-size: 30pt; width: 45%">
+                    <li style="margin-bottom: 20px;"><b>Чистые функции</b> - результат зависит только от аргументов</li>
+                    <li style="margin-bottom: 20px;"><b>Функции высшего порядка</b> - может быть аргументом другой функции</li>
+                    <li style="margin-bottom: 20px;"><b>Дискретность</b> - результат одной функции не зависит от работы другой</li>
+                    <li><b>Композиция</b></li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide26.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <h2 style="margin-top: 8%; margin-bottom: 3%;">Основные правила функционального программирования</h2>
+                <ol style="font-size: 40pt; width: 70%">
+                    <li style="margin-bottom: 20px;"><span style="color: orangered;">Константы</span>, вместо переменных</li>
+                    <li style="margin-bottom: 20px;">Только <span style="color: orangered;">неизменяемые</span> объекты</li>
+                    <li style="margin-bottom: 20px;">Результат функции зависит только от своих аргументов</li>
+                    <li style="margin-bottom: 20px;">Отсутствует любое (неконтролируемое) взаимодействие <span style="color: orangered;">с внешним миром</span></li>
+                    <li>Никаких циклов - вместо них <span style="color: orangered;">рекурсии</span></li>
+                </ol>
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" style="margin-top: 3%;" src="img/lecture_4/slide28.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <h2 style="margin-top: 8%; margin-bottom: 3%;">Основные правила функционального программирования</h2>
+                <ol style="font-size: 40pt; width: 70%">
+                    <li style="margin-bottom: 20px;"><span style="color: orangered;">Константы</span>, вместо переменных</li>
+                    <li style="margin-bottom: 20px;">Только <span style="color: orangered;">неизменяемые</span> объекты</li>
+                    <li style="margin-bottom: 20px;">Результат функции зависит только от своих аргументов</li>
+                    <li style="margin-bottom: 20px;">Отсутствует любое (неконтролируемое) взаимодействие <span style="color: orangered;">с внешним миром</span></li>
+                    <li>Никаких циклов - вместо них <span style="color: orangered;">рекурсии</span></li>
+                </ol>
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <h1 style="color: orangered;">Side effects</h1>
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <div style="margin: auto; margin-top: 5%; width: 60%; font-size: 40pt; word-wrap: break-word;">
+                    <b>Побочные эффекты</b> (side effects) — любые действия работающей программы, изменяющие среду выполнения
+                </div>
+                <img width="30%" src="img/lecture_4/side_effect_joke.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <div style="display: flex; width: 80%; margin: auto; margin-top: 7%;">
+                    <img width="50%" src="img/lecture_4/elephant.jpg">
+                    <div style="width: 40%; margin: auto; font-size: 40pt;"><b>Side effect</b> - слон в посудной лавке нашего идеального функционального мира</div>
+                </div>
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <h2 style="margin-top: 8%; margin-bottom: 3%;">Примеры побочных эффектов</h2>
+                <ul style="font-size: 35pt;">
+                    <li style="margin-bottom: 20px;">Изменение глобальных переменных</li>
+                    <li style="margin-bottom: 20px;">Взаимодействие с диском</li>
+                    <li style="margin-bottom: 20px;">Взаимодействие с сетью</li>
+                    <li style="margin-bottom: 20px;">Запрос в базу данных</li>
+                    <li style="margin-bottom: 20px;">Нахождение случайного числа и другие</li>
+                </ul>
+                <img style="margin-left: 20px;" src="img/lecture_4/nullException.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <h2 style="margin-top: 8%; margin-bottom: 3%;">Правила работы с побочными эффектами</h2>
+                <ol style="font-size: 40pt; width: 75%">
+                    <li style="margin-bottom: 20px;">Любое взаимодействие с внешним миром должно быть четко обозначено</li>
+                    <li style="margin-bottom: 20px;">Любой результат взаимодействия с миром должен быть завернут в “безопасную” оболочку</li>
+                    <li style="margin-bottom: 20px;">Для любого варианта возможного поведения стороннего эффекта необходимо четко указать сценарий реагирования</li>
+                </ol>
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" style="margin-top: 3%;" src="img/lecture_4/slide35.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide36.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" style="margin-top: 3%;" src="img/lecture_4/slide37.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide38.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide39.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide40.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%"  src="img/lecture_4/slide41.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="60%" src="img/lecture_4/slide42.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide43.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" style="margin-top: 3%;" src="img/lecture_4/slide44.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <h2 style="margin-top: 8%; margin-bottom: 3%;">Подытожим</h2>
+                <ul style="font-size: 35pt;">
+                    <li style="margin-bottom: 20px;">Программа - это комбинация функций или других строгих объектов</li>
+                    <li style="margin-bottom: 20px;">Никаких переменных, каждый объект - отдельная неизменяемая сущность</li>
+                    <li style="margin-bottom: 20px;">Каждая функция независима от внешнего мира</li>
+                    <li style="margin-bottom: 20px;">На каждый вариант поведения дается однозначный сценарий поведения</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <h1>Зачем это вообще все нужно?</h1>
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <img width="80%" src="img/lecture_4/slide47.png">
+            </section>
+        </div>
+
+        <div class="slides">
+            <section>
+                <h1>вопросы</h1>
+            </section>
+        </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: false,
+            progress: true,
+            history: true,
+            center: true,
+            slideNumber: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [
+                {
+                    src: 'lib/js/classList.js', condition: function () {
+                        return !document.body.classList;
+                    }
+                },
+                {
+                    src: 'plugin/markdown/marked.js', condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'plugin/markdown/markdown.js', condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                        return !!document.querySelector('pre code');
+                    }, callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },
+                { src: 'plugin/zoom-js/zoom.js', async: true },
+                { src: 'plugin/notes/notes.js', async: true }
+            ]
+        });
+
+        window.addEventListener("mousedown", handleClick, false);
+        window.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        }, false);
+
+        function handleClick(e) {
+            e.preventDefault();
+            if (e.button === 0) Reveal.next();
+            if (e.button === 2) Reveal.prev();
+        }
+    </script>
+
+</body>
+</html>
