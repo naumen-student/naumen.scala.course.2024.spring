@@ -43,13 +43,22 @@
         </section>
     </div>
     <div class="slides">
+        <!-- <section>
+            <h2>Требуемые знания</h2>
+            <ul>
+                <li>Перегрузка операторов</li>
+                <li>Implicits (лекция 3)</li>
+                <li>Higher kinded types (лекция 3)</li>
+                <li>Сериализация и JSON</li>
+            </ul>
+        </section> -->
         <section>
-            <h2>В этой лекции</h2>
+            <h2>План лекции</h2>
             <ul>
                 <li>Определение концепции type class</li>
                 <li>Пример применения type class</li>
-                <li>Абстракции Monoid, Functor, Monad</li>
-                <li>Пример использования монад</li>
+                <li>Monoid, Functor, Monad и другие абстракции</li>
+                <li>Примеры использования некоторых из изученных абстакций</li>
             </ul>
         </section>
         <section>
@@ -57,59 +66,74 @@
         </section>
         <section>
             <h2>Type class</h2>
-            <p>Type class - это концепт, паттерн, позволяющий достичь ad-hoc полиморфизма.
-                По сути, type class - это параметризированный абстрактный тип, который добавляет новое поведение для типов.</p>
-            <p>Ad-hoc полиморфизм - возможность выполнять определённый код, в зависимости от типа входных параметров.
-            Типичный пример ad-hoc полиморфизама это перегрузка операторов.</p>
-            <p>В Scala дополнительной свободы в ad-hoc полиморфизме позволяют достичь использование implicit class.</p>
+            <p>Type class представляет собой концепцию, паттерн, который позволяет добавлять поведение для типов без изменения самого типа.</p>
+            <p>В Scala, использование implicit class обеспечивает дополнительные удобство использования type class'ов.</p>
             <div class="code-block">
                 <pre><code class="scala">
-  implicit final class any2stringadd[A](private val self: A) extends AnyVal {
+implicit final class any2stringadd[A](private val self: A) extends AnyVal {
     def +(other: String): String = String.valueOf(self) + other
-  }
+}
 
-  12 + "string"  // any2stringadd[Int](12).+("string")
+12 + "str"  // 12.+("str") // 12str
                 </code></pre>
             </div>
         </section>
         <section>
             <h2>Type class</h2>
-            <h3>Задача</h3>
-            <p>Необходимо написать очередную библиотеку для сериализации в JSON. Требования:</p>
+            <h3>Пример</h3>
+            <p>Создание новой библиотеки для сериализации данных в формат JSON.</br>
+                Требования:</p>
             <ul>
-                <li>Для базовых типов сериализация должна работать "из коробки"</li>
-                <li>Для базовых коллекций сериализация должна работать "из коробки"</li>
-                <li>Должна быть возможность описывать то, как сериализовывать пользовательские типы</li>
+                <li>Базовые типы данных должны сериализоваться "из коробки".</li>
+                <li>Базовые коллекции (например: списки, массивы) должны также сериализоваться "из коробки".</li>
+                <li>Пользователи библиотеки должны иметь возможность определять процедуру сериализации для своих собственных типов данных.</li>
             </ul>
         </section>
         <section>
             <h2>Type class</h2>
-            <h3>Возможные варианты</h3>
-            <p>Создать трейт JsonSerializable с функцией toJson и все пользовательские классы должны будут
-                наследовать его и реализовывать функцию toJson так, как им нужно.</p>
+            <h3>Немного контекста для решаемой задачи</h3>
+            <p>Сериализация – это процесс преобразования объекта или структуры данных в последовательность битов или строку, чтобы его можно было сохранить, передать, и позже возможно восстановить.</p>
+            <p>JSON - это текстовый формат обмена данными</p>
+            <div class="code-block">
+                <pre><code class="scala">
+case class UserData(name: String, age: Int, awards: List[String])
+val gena = UserData("Gennady Korotkevich", 29, List("Codechef", "Rockethon", "VK CUP"))
+
+{
+    name: "Gennady Korotkevich",
+    age: 29,
+    awards: ["Codechef", "Rockethon", "VK CUP"]
+}
+                </code></pre>
+            </div>
+        </section>
+        <section>
+            <h2>Type class</h2>
+            <h3>Возможные варианты реализации</h3>
+            <p>Один из вариантов реализации - создание трейта JsonSerializable с методом toJson. 
+                Все пользовательские классы должны наследовать этот трейт и реализовать функцию toJson в соответствии с их специфическими потребностями.</p>
             <div class="code-block">
                 <pre><code class="scala">
   trait JsonSerializable {
     def toJson: String
   }
 
-  def serialize(value: JsonSerializable): String = value.toJson
-
   case class UserData(name: String, age: Int) extends JsonSerializable {
     override def toJson: String = ???
   }
+
+  def serialize(value: JsonSerializable): String = value.toJson
                 </code></pre>
             </div>
-            <p>Минусы:</p>
+            <p>Недостатки:</p>
             <ul>
-                <li>А что делать с базовыми типами и коллекциями?</li>
-                <li>Почему пользовательские классы знают о том, как они должны сериализовываться?</li>
+                <li>Не работает для базовых типов и коллекций (не можем подмешать trait)</li>
             </ul>
         </section>
         <section>
             <h2>Type class</h2>
-            <h3>Возможные варианты</h3>
-            <p>Для всех примитивных типов создать класс-обёртку, который умеет сериализировать данные</p>
+            <h3>Возможные варианты реализации</h3>
+            <p>Для всех примитивных типов создать класс-обёртку, который умеет сериализировать данные.</p>
             <div class="code-block">
                 <pre><code class="scala">
   trait JsonSerializable {
@@ -125,9 +149,9 @@
   serialize(StrJsonSerializer("Hello!"))
                 </code></pre>
             </div>
-            <p>Минусы:</p>
+            <p>Недостатки:</p>
             <ul>
-                <li>Неудобно пользоваться</li>
+                <li>Неудобно использовать</li>
             </ul>
         </section>
         <section>
@@ -141,7 +165,7 @@
   }
                 </code></pre>
             </div>
-            <p>Как можно видеть, сам type class - это параметризированный трейт, в котором описано, какие функции для
+            <p>Как можно видеть, type class - это параметризированный трейт, в котором описано, какие функции для
             некоторого типа А мы хотим добавить</p>
         </section>
         <section>
@@ -185,7 +209,7 @@
   }
                 </code></pre>
             </div>
-            <p>Ключевое слово implicitly позволяет получить из implicit scope значение с необходимым типом</p>
+            <p>Ключевое слово implicitly позволяет получить из implicit scope значение с необходимым типом.</p>
             <div class="code-block">
                 <pre><code class="scala">
   def implicitly[A](implicit value: A): A = value
@@ -195,7 +219,6 @@
         <section>
             <h2>Type class</h2>
             <h3>Решение с использованием type class</h3>
-            <p>Как теперь это использовать?</p>
             <div class="code-block">
                 <pre><code class="scala">
   object JsonSerializer { // interface object
@@ -220,9 +243,9 @@
   import JsonSerializerInstances._
   import JsonSerializerSyntax._
 
-  "Hello!".toJson
-  false.toJson
-  UserData("Max", 23, false).toJson
+  "Hello!".asJson
+  false.asJson
+  UserData("Max", 23, false).asJson
                 </code></pre>
             </div>
         </section>
@@ -255,13 +278,13 @@
   }
 
   JsonSerializer.toJson(UserData("Max", 23, false))
-  UserData("Max", 23, false).toJson
+  UserData("Max", 23, false).asJson
                 </code></pre>
             </div>
         </section>
         <section>
             <h2>Type class</h2>
-            <h3>type class для type constructor</h3>
+            <h3>Type class для Higher kinded types</h3>
             <div class="code-block">
                 <pre><code class="scala">
   trait Searchable[F[_]] {
@@ -297,7 +320,7 @@
         <section>
             <h2>Semigroup (полугруппа)</h2>
             <p>Математика: множество с заданной на нём ассоциативной бинарной операцией</p>
-            <p>Для нас важно: Описывает возможность комбинации элементов</p>
+            <p>Для нас важно: Описывает возможность комбинации элементов одного типа</p>
             <div class="code-block">
                 <pre><code class="scala">
     trait Semigroup[A] {
@@ -308,8 +331,9 @@
             <p>Для операции в combine необходимо выполнение ассоциативности</p>
             <div class="code-block">
                 <pre><code class="scala">
-    def low(x: Int, b: Int, y: Int)(implicit m: Monoid[Int]): Boolean =
-        m.combine(x, m.combine(b, y)) == m.combine(m.combine(x, b), y)
+def associativeLaw[A](x: A, y: A, z: A)(implicit m: Monoid[A]): Boolean = {
+    m.combine(x, m.combine(y, z)) == m.combine(m.combine(x, y), z)
+}
                 </code></pre>
             </div>
         </section>
@@ -319,19 +343,20 @@
             <p>Для нас важно: возможность обобщить ещё больше алгоритмов</p>
             <div class="code-block">
                 <pre><code class="scala">
-    trait Monoid[A] extends Semigroup[A] {
-        def empty: A
-    }
+trait Monoid[A] extends Semigroup[A] {
+    def empty: A
+}
                 </code></pre>
             </div>
-            <p>Функция для сложения всего, для чего существует инстанс моноида</p>
+            <p>Свойство нейтрального элемента</p>
             <div class="code-block">
                 <pre><code class="scala">
-    def sumEverything[A](x: Seq[A])(implicit monoid: Monoid[A]): A =
-        x.foldLeft(monoid.empty)(_ |+| _)
+def identityLaw[A](x: A)(implicit m: Monoid[A]): Boolean = {
+    (m.combine(x, m.empty) == x) && (m.combine(m.empty, x) == x)
+}
                 </code></pre>
             </div>
-        </section>
+        </section>  
         <section>
             <h2>Monoid (моноид)</h2>
             <p>Зададим несколько моноидов</p>
@@ -420,18 +445,18 @@
         <section>
             <h2>Пример</h2>
             <h3>Map-Reduce с помощью Functor и Monoid</h3>
-            <p>Сперва напишем функцию, которая принимает батч данных и функцию-обработчик.</p>
+            <p>Для начала напишем функцию, которая принимает батч данных и функцию-обработчик.</p>
             <p>Функция-свёртка определяется моноидом.</p>
             <p>Функция mapFold должна возвращать результат применения функции свёртки на все преобразованные элементы из изначального набора данных.</p>
             <div class="code-block">
                 <pre><code class="scala">
-    import cats._
-    import cats.implicits._
+import cats._
+import cats.implicits._
 
-    object MapReduce extends App {
-      def mapFold[A, B : Monoid](values: Vector[A])(f: A => B): B =
-        values.foldLeft(implicitly[Monoid[B]].empty) { (acc, elem) => acc |+| f(elem) }
-    }
+object MapReduce extends App {
+    def mapFold[A, B : Monoid](values: Vector[A])(f: A => B): B =
+    values.foldLeft(implicitly[Monoid[B]].empty) { (acc, elem) => acc |+| f(elem) }
+}
                 </code></pre>
             </div>
         </section>
@@ -466,7 +491,7 @@ object MapReduce extends App {
         <section>
             <h2>Пример</h2>
             <h3>Map-Reduce с помощью Functor и Monoid</h3>
-            <p>А можно ли обобщить ещё сильнее?</p>
+            <p>А что если обобщить еще?</p>
             <div class="code-block">
                 <pre><code class="scala">
 import cats._
@@ -511,7 +536,7 @@ object MapReduce extends App {
     }
                 </code></pre>
             </div>
-            <p>Сразу заметим, что любая монада автоматически является и функтором</p>
+            <p>Отметим, что любая монада автоматически является и функтором</p>
         </section>
         <section>
             <h2>Монадические законы</h2>
@@ -533,14 +558,14 @@ object MapReduce extends App {
 
         <section>
             <h2>Использование монад</h2>
-            <p>Сразу заметим, что Option, Either, List и ещё целый ряд базовых коллекций являются монадами.</p>
+            <p>Отметим, что Option, Either, List и ещё целый ряд базовых коллекций являются монадами.</p>
             <div class="code-block">
                 <pre><code class="scala">
-  Option(12).flatMap(x => Some(x + 12))
+  Option(12).flatMap(x => Some(x + 12)) // Some(24)
 
-  Right(12).flatMap(x => Right(x + 12))
+  Right(12).flatMap(x => Right(x + 12)) // Right(24)
 
-  List(1, 2, 3).flatMap(x => List(x, 12))
+  List(1, 2, 3).flatMap(x => List(x, 12)) // List(1, 12, 2, 12, 3, 12)
                 </code></pre>
             </div>
         </section>
@@ -587,7 +612,7 @@ object MapReduce extends App {
             <h2>Использование монад</h2>
             <p>Отдельно остановимся на монаде IO[A]. Эта монада позволяет описывать сайд эффекты как</p>
             <p>чистые значения, которые способны выражать как синхронные, так и асинхронные вычисления.</p>
-            <p>Во всех библиотеках (ZIO, monix, scalaz) есть аналог этой монады.</p>
+            <p>В функциональных библиотеках (ZIO, monix) есть аналог этой монады.</p>
             <p>По своей сути IO является только описанием тех вычислений, которые должны произойти.</p>
             <div class="code-block">
                 <pre><code class="scala">
@@ -601,36 +626,6 @@ object MapReduce extends App {
     program.unsafeRunSync() // чтобы описание программы начало выполняться, необходимо напрямую его запустить
                 </code></pre>
             </div>
-        </section>
-        <section>
-            <h2>Как устроена монада</h2>
-            <p>Как выходит так, что вычисления производятся только при непосредственном запуске описания?</p>
-            <div class="code-block">
-                <pre><code class="scala">
-    val a = IO { println("Side effect") }
-    val a2 = IO.apply { println("Side effect") }
-
-    def apply[A](thunk: => A): IO[A] = delay(thunk)
-
-    def delay[A](thunk: => A): IO[A] = {
-      val fn = () => thunk
-      Delay(fn, Tracing.calculateTracingEvent(fn))
-    }
-
-    private[effect] final case class Delay[+A](thunk: () => A, event: TracingEvent)
-        extends IO[A] {
-      def tag = 2
-    }
-
-    private[effect] final case class Blocking[+A](hint: Sync.Type, thunk: () => A, event: TracingEvent)
-        extends IO[A] {
-      def tag = 21
-    }
-                </code></pre>
-            </div>
-            <p>Таким образом, наши вычисления хранятся в специальной структуре данных, которую после мы передаём на вход
-            специальному интерпретатору. Интерпретатор с помощью pattern-matching понимает, что именно за case class перед ним и
-            соответственным образом выполняет команду</p>
         </section>
         <section>
             <h2>И ещё пара type classов</h2>
@@ -679,14 +674,21 @@ object MapReduce extends App {
             </div>
         </section>
         <section>
-            <h4>А сколько вообще type classов?</h4>
+            <h4>А сколько вообще type class'ов?</h4>
             <img style="height: 1000px" src="img/lecture_5/cats.svg">
         </section>
         <section>
             <h3>Полезные ссылки</h3>
+            <a href="https://typelevel.org/cats/typeclasses.html">Type classes</a>
+            </br>
+            <a href="https://typelevel.org/blog/2016/08/21/hkts-moving-forward.html">Higher-kinded types</a>
+            </br>
             <a href="https://www.scalawithcats.com/">Scala with cats 2</a>
             </br>
+            <a href="https://typelevel.org/blog/2017/05/02/io-monad-for-cats.html">IO monad for cats</a>
+            </br>
             <a href="https://typelevel.org/cats-effect/">Cats Effect</a>
+            
         </section>
     </div>
 
