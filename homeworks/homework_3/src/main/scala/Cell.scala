@@ -23,7 +23,7 @@ class ReferenceCell(private val x: Int, private val y: Int, private val table: T
     override def toString: String = {
         val cell: AnyRef = this.table.getCell(x, y).get
 
-        if (cell.isInstanceOf[String] && cell == "None") {
+        if (cell == None) {
             return "outOfRange"
         }
 
