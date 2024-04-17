@@ -1,0 +1,1225 @@
+2024.03.27 23:08:14 INFO  Started: Metals version 1.2.2 in folders '/home/grish-grdv/IdeaProjects/naumen' for client Visual Studio Code 1.87.2.
+23:08:15.180 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+23:08:15.181 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+23:08:15.181 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+23:08:15.183 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+23:08:15.183 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@4f2410ac ...
+23:08:15.183 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+23:08:15.183 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+23:08:15.183 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@4f2410ac ...
+23:08:15.183 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/grish-grdv/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+23:08:15.186 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+23:08:15.186 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+23:08:15.186 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+23:08:15.186 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+23:08:15.186 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+23:08:15.186 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+23:08:15.187 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+23:08:15.188 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+23:08:15.188 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+23:08:15.188 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+23:08:15.188 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+23:08:15.237 [pool-1-thread-1] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/grish-grdv/IdeaProjects/naumen/.metals/metals (H2 2.2)
+23:08:15.237 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+23:08:15.237 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+23:08:15.237 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+23:08:15.237 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+23:08:15.243 [pool-1-thread-1] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+23:08:15.244 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+23:08:15.244 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+23:08:15.247 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+23:08:15.249 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+23:08:15.252 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+23:08:15.252 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+23:08:15.252 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+23:08:15.252 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+23:08:15.252 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+23:08:15.252 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+23:08:15.252 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+23:08:15.252 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+23:08:15.252 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+23:08:15.252 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+23:08:15.253 [pool-1-thread-1] INFO org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+23:08:15.254 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.006s)
+23:08:15.256 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+23:08:15.258 [pool-1-thread-1] INFO org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+23:08:15.259 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.parser.Parser -- Parsing  ...
+23:08:15.263 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 1: CREATE TABLE IF NOT EXISTS "PUBLIC"."flyway_schema_history" (
+    "installed_rank" INT NOT NULL,
+    "version" VARCHAR(50),
+    "description" VARCHAR(200) NOT NULL,
+    "type" VARCHAR(20) NOT NULL,
+    "script" VARCHAR(1000) NOT NULL,
+    "checksum" INT,
+    "installed_by" VARCHAR(100) NOT NULL,
+    "installed_on" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "execution_time" INT NOT NULL,
+    "success" BOOLEAN NOT NULL,
+    CONSTRAINT "flyway_schema_history_pk" PRIMARY KEY ("installed_rank")
+) AS SELECT -1, NULL, '<< Flyway Schema History table created >>', 'TABLE', '', NULL, 'SA', CURRENT_TIMESTAMP, 0, TRUE
+23:08:15.264 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 14: CREATE INDEX "PUBLIC"."flyway_schema_history_s_idx" ON "PUBLIC"."flyway_schema_history" ("success")
+23:08:15.264 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: CREATE TABLE IF NOT EXISTS "PUBLIC"."flyway_schema_history" (
+    "installed_rank" INT NOT NULL,
+    "version" VARCHAR(50),
+    "description" VARCHAR(200) NOT NULL,
+    "type" VARCHAR(20) NOT NULL,
+    "script" VARCHAR(1000) NOT NULL,
+    "checksum" INT,
+    "installed_by" VARCHAR(100) NOT NULL,
+    "installed_on" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "execution_time" INT NOT NULL,
+    "success" BOOLEAN NOT NULL,
+    CONSTRAINT "flyway_schema_history_pk" PRIMARY KEY ("installed_rank")
+) AS SELECT -1, NULL, '<< Flyway Schema History table created >>', 'TABLE', '', NULL, 'SA', CURRENT_TIMESTAMP, 0, TRUE
+23:08:15.266 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+23:08:15.266 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: CREATE INDEX "PUBLIC"."flyway_schema_history_s_idx" ON "PUBLIC"."flyway_schema_history" ("success")
+23:08:15.267 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+23:08:15.268 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Created Schema History table "PUBLIC"."flyway_schema_history"
+23:08:15.271 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": << Empty Schema >>
+23:08:15.271 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.parser.Parser -- Parsing V1__Create_tables.sql ...
+23:08:15.272 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 4: -- The relationship between library dependency sources under .metals/readonly/**
+-- and build targets they belong to. Required to know what classpath to use
+-- for compiling dependency sources.
+create table dependency_source(
+  text_document_uri varchar primary key,
+  build_target_uri varchar not null
+)
+23:08:15.272 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 12: -- The relationship between library dependency sources under .metals/readonly/**
+-- and worksheets they belong to. Required to know what classpath to use
+-- for compiling dependency sources.
+create table worksheet_dependency_source(
+  text_document_uri varchar primary key,
+  worksheet_uri varchar not null
+)
+23:08:15.273 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 19: -- The relationship between what library dependency sources under .metals/readonly/**
+-- map to which build targets.
+create table sbt_digest(
+  md5 varchar,
+  status tinyint not null,
+  when_recorded timestamp
+)
+23:08:15.273 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 27: -- Which window/showMessage and window/showMessageRequest dialogues have been dismissed
+-- by the user via "Don't show again" or closed by clicking on "x".
+create table dismissed_notification(
+  id int,
+  when_dismissed timestamp,
+  when_expires timestamp
+)
+23:08:15.274 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 34: -- The choice of build tool when multiple build tool files are found in a workspace
+create table chosen_build_tool(
+  build_tool varchar primary key
+)
+23:08:15.274 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Starting migration of schema "PUBLIC" to version "1 - Create tables" ...
+23:08:15.275 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "PUBLIC" to version "1 - Create tables"
+23:08:15.275 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- The relationship between library dependency sources under .metals/readonly/**
+-- and build targets they belong to. Required to know what classpath to use
+-- for compiling dependency sources.
+create table dependency_source(
+  text_document_uri varchar primary key,
+  build_target_uri varchar not null
+)
+23:08:15.276 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+23:08:15.276 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- The relationship between library dependency sources under .metals/readonly/**
+-- and worksheets they belong to. Required to know what classpath to use
+-- for compiling dependency sources.
+create table worksheet_dependency_source(
+  text_document_uri varchar primary key,
+  worksheet_uri varchar not null
+)
+23:08:15.277 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+23:08:15.277 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- The relationship between what library dependency sources under .metals/readonly/**
+-- map to which build targets.
+create table sbt_digest(
+  md5 varchar,
+  status tinyint not null,
+  when_recorded timestamp
+)
+23:08:15.277 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+23:08:15.277 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- Which window/showMessage and window/showMessageRequest dialogues have been dismissed
+-- by the user via "Don't show again" or closed by clicking on "x".
+create table dismissed_notification(
+  id int,
+  when_dismissed timestamp,
+  when_expires timestamp
+)
+23:08:15.278 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+23:08:15.278 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- The choice of build tool when multiple build tool files are found in a workspace
+create table chosen_build_tool(
+  build_tool varchar primary key
+)
+23:08:15.279 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+23:08:15.279 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Successfully completed migration of schema "PUBLIC" to version "1 - Create tables"
+23:08:15.280 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Schema History table "PUBLIC"."flyway_schema_history" successfully updated to reflect changes
+23:08:15.283 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.parser.Parser -- Parsing V2__Server_discovery.sql ...
+23:08:15.284 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 4: -- For each unique combination of installed build servers we select one server.
+-- The md5 checksum is computed from the names of the installed build servers, and
+-- the selected server is the server which the user chose for this workspace.
+create table chosen_build_server(
+  md5 varchar primary key,
+  selected_server varchar,
+  when_recorded timestamp
+)
+23:08:15.284 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Starting migration of schema "PUBLIC" to version "2 - Server discovery" ...
+23:08:15.285 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "PUBLIC" to version "2 - Server discovery"
+23:08:15.285 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- For each unique combination of installed build servers we select one server.
+-- The md5 checksum is computed from the names of the installed build servers, and
+-- the selected server is the server which the user chose for this workspace.
+create table chosen_build_server(
+  md5 varchar primary key,
+  selected_server varchar,
+  when_recorded timestamp
+)
+23:08:15.286 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+23:08:15.286 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Successfully completed migration of schema "PUBLIC" to version "2 - Server discovery"
+23:08:15.287 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Schema History table "PUBLIC"."flyway_schema_history" successfully updated to reflect changes
+23:08:15.288 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.parser.Parser -- Parsing V3__Jar_symbols.sql ...
+23:08:15.288 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 2: -- Indexed jars, the MD5 digest of path, modified time and size as key
+create table indexed_jar(
+  id int auto_increment unique,
+  md5 varchar primary key
+)
+23:08:15.289 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 7: -- Top Level Symbols per jar, allow for multiple jars with same symbols and paths
+create table toplevel_symbol(
+  symbol varchar not null,
+  path varchar not null,
+  jar int,
+  foreign key (jar) references indexed_jar (id) on delete cascade,
+  primary key (jar, path, symbol)
+)
+23:08:15.289 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 15: -- Create index to speedup lookup of jar symbols
+create index toplevel_symbol_jar on toplevel_symbol(jar)
+23:08:15.290 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Starting migration of schema "PUBLIC" to version "3 - Jar symbols" ...
+23:08:15.290 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "PUBLIC" to version "3 - Jar symbols"
+23:08:15.290 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- Indexed jars, the MD5 digest of path, modified time and size as key
+create table indexed_jar(
+  id int auto_increment unique,
+  md5 varchar primary key
+)
+23:08:15.293 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+23:08:15.293 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- Top Level Symbols per jar, allow for multiple jars with same symbols and paths
+create table toplevel_symbol(
+  symbol varchar not null,
+  path varchar not null,
+  jar int,
+  foreign key (jar) references indexed_jar (id) on delete cascade,
+  primary key (jar, path, symbol)
+)
+23:08:15.296 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+23:08:15.296 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- Create index to speedup lookup of jar symbols
+create index toplevel_symbol_jar on toplevel_symbol(jar)
+23:08:15.297 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+23:08:15.297 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Successfully completed migration of schema "PUBLIC" to version "3 - Jar symbols"
+23:08:15.298 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Schema History table "PUBLIC"."flyway_schema_history" successfully updated to reflect changes
+23:08:15.299 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.parser.Parser -- Parsing V4__Fingerprints.sql ...
+23:08:15.300 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.ParserSqlScript -- Found statement at line 2: -- Fingerprints saved between invocations
+create table fingerprints(
+  path varchar not null,
+  text varchar not null,
+  md5 varchar not null,
+  id int auto_increment unique
+)
+23:08:15.300 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Starting migration of schema "PUBLIC" to version "4 - Fingerprints" ...
+23:08:15.300 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema "PUBLIC" to version "4 - Fingerprints"
+23:08:15.300 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- Executing SQL: -- Fingerprints saved between invocations
+create table fingerprints(
+  path varchar not null,
+  text varchar not null,
+  md5 varchar not null,
+  id int auto_increment unique
+)
+23:08:15.301 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- 0 rows affected
+23:08:15.301 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbMigrate -- Successfully completed migration of schema "PUBLIC" to version "4 - Fingerprints"
+23:08:15.302 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Schema History table "PUBLIC"."flyway_schema_history" successfully updated to reflect changes
+23:08:15.306 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Successfully applied 4 migrations to schema "PUBLIC", now at version v4 (execution time 00:00.013s)
+23:08:15.310 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 50 of 100M
+2024.03.27 23:08:15 WARN  no build tool detected in workspace '/home/grish-grdv/IdeaProjects/naumen'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2024.03.27 23:08:15 WARN  Build server is not auto-connectable.
+мар. 27, 2024 11:08:15 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+2024.03.27 23:08:21 INFO  no build target found for /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.03.27 23:08:22 INFO  time: code lens generation in 7.18s
+2024.03.27 23:08:38 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:08:47 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:08:52 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:09:14 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:09:27 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:09:29 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:09:44 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:09:45 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:09:47 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:09:59 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:10:05 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+мар. 27, 2024 11:10:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 283
+2024.03.27 23:10:11 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:10:17 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:10:20 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:10:23 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:10:26 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:10:28 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:10:35 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:10:37 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:10:51 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:10:55 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+мар. 27, 2024 11:10:57 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 523
+2024.03.27 23:10:59 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:11:02 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:11:05 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:11:07 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:11:10 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:11:15 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:11:17 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:11:26 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+мар. 27, 2024 11:11:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 699
+2024.03.27 23:11:30 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:11:35 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:11:38 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:11:42 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:11:44 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:11:46 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:11:47 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:12:52 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:12:59 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:13:01 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:13:04 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:13:05 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+мар. 27, 2024 11:13:06 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 889
+2024.03.27 23:13:08 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:13:18 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:13:21 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:13:25 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:13:26 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:13:39 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:13:45 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:13:59 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:14:03 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:14:06 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:14:10 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:14:11 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:14:14 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:14:24 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+мар. 27, 2024 11:14:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1176
+2024.03.27 23:14:24 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:14:27 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:14:32 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:14:38 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:14:39 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:14:41 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:15:46 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:15:51 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:16:11 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:16:19 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:16:31 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:16:39 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:16:42 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+мар. 27, 2024 11:16:47 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1445
+2024.03.27 23:16:49 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:16:52 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:16:53 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:16:56 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:16:56 WARN  Using indexes to guess the definition of width
+2024.03.27 23:16:56 WARN  Using indexes to guess the definition of height
+2024.03.27 23:16:56 WARN  Using indexes to guess the definition of height
+2024.03.27 23:17:02 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:17:05 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:17:08 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:17:10 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:17:11 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:17:14 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:17:40 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:17:56 WARN  Using indexes to guess the definition of getCell
+мар. 27, 2024 11:17:58 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1641
+2024.03.27 23:18:02 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:18:09 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:18:12 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:18:15 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:18:19 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:18:24 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:18:26 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:18:33 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:18:36 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:18:39 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:18:40 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:18:44 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:18:53 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:18:57 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:19:00 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:19:01 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:19:03 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:19:04 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:19:13 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:19:20 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:19:21 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:19:23 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:19:27 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:19:30 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:19:31 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:19:33 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:19:38 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:19:45 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:19:48 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:19:48 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:19:53 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:19:55 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:20:02 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:20:05 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:20:10 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:20:18 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:20:18 WARN  Using indexes to guess the definition of width
+2024.03.27 23:20:18 WARN  Using indexes to guess the definition of width
+2024.03.27 23:20:19 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:20:27 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:21:00 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:21:04 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:21:08 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:21:12 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:21:27 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:21:30 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:21:37 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+мар. 27, 2024 11:21:39 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2432
+2024.03.27 23:21:40 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:21:40 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:21:40 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:21:46 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:21:47 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:21:50 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:21:52 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:21:54 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:22:04 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:22:06 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+мар. 27, 2024 11:22:09 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2564
+2024.03.27 23:22:10 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:22:15 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:22:16 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:22:23 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:22:35 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:22:36 WARN  Using indexes to guess the definition of Table
+2024.03.27 23:22:36 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:22:36 WARN  Using indexes to guess the definition of Table
+2024.03.27 23:22:38 WARN  Using indexes to guess the definition of Cell
+2024.03.27 23:22:39 WARN  Using indexes to guess the definition of Cell
+мар. 27, 2024 11:22:41 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2693
+2024.03.27 23:22:47 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:22:48 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:22:51 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:22:54 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:22:57 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:23:01 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:23:14 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:23:15 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:23:23 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+мар. 27, 2024 11:23:26 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2892
+2024.03.27 23:23:27 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:23:28 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:23:29 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:23:30 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:23:35 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:23:39 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:23:41 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:24:00 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:24:03 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:24:04 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:24:07 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:24:09 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:24:12 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+мар. 27, 2024 11:24:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3069
+2024.03.27 23:24:15 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:24:16 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:24:19 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:24:21 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:24:25 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:24:26 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:24:29 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:24:32 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:24:34 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:24:35 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:24:39 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:25:32 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:25:36 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:25:38 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:25:44 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:26:20 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:26:22 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:26:24 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:26:33 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:26:38 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:26:40 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:26:45 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:26:56 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:26:59 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:27:01 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:27:05 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:27:09 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:27:12 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:27:15 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:27:18 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:27:21 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:27:26 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:28:22 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:28:25 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:28:27 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:28:35 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:28:36 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:28:40 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:28:42 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:28:45 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:28:49 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:28:54 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:28:56 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:29:02 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:29:03 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:29:07 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:29:12 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:29:15 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:29:16 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:29:19 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:29:20 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:29:24 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:30:51 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:30:53 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:30:55 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:30:59 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:31:04 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+мар. 27, 2024 11:31:05 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:118)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: file:///home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala:11: error: malformed xml literal, expected:
+Expected (any-char | "{{" | "}}" | "&" | "&#" | "&#x" | "{" | "<xml:unparsed" | "<![CDATA[" | "<?" | "<!--" | "<" | "</"):11:2, found ""
+}
+ ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getXml(LegacyScanner.scala:937)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchLT$1(LegacyScanner.scala:295)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:303)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.loop(ScalaToplevelMtags.scala:331)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.indexRoot(ScalaToplevelMtags.scala:56)
+	at scala.meta.internal.mtags.MtagsIndexer.index(MtagsIndexer.scala:19)
+	at scala.meta.internal.mtags.MtagsIndexer.index$(MtagsIndexer.scala:18)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.index(ScalaToplevelMtags.scala:43)
+	at scala.meta.internal.mtags.Mtags$.allToplevels(Mtags.scala:125)
+	at scala.meta.internal.metals.DefinitionProvider.fromMtags(DefinitionProvider.scala:376)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$4(DefinitionProvider.scala:296)
+	at scala.Option.orElse(Option.scala:477)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$1(DefinitionProvider.scala:296)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.DefinitionProvider.positionOccurrence(DefinitionProvider.scala:288)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$definitionOrReferences$1(MetalsLspService.scala:2564)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.MetalsLspService.definitionOrReferences(MetalsLspService.scala:2560)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$definition$1(MetalsLspService.scala:1404)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.definition(MetalsLspService.scala:1403)
+	at scala.meta.internal.metals.WorkspaceLspService.definition(WorkspaceLspService.scala:373)
+	at scala.meta.metals.lsp.DelegatingScalaService.definition(DelegatingScalaService.scala:69)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	... 13 more
+
+мар. 27, 2024 11:31:05 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:118)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: file:///home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala:11: error: malformed xml literal, expected:
+Expected (any-char | "{{" | "}}" | "&" | "&#" | "&#x" | "{" | "<xml:unparsed" | "<![CDATA[" | "<?" | "<!--" | "<" | "</"):11:2, found ""
+}
+ ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getXml(LegacyScanner.scala:937)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchLT$1(LegacyScanner.scala:295)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:303)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.loop(ScalaToplevelMtags.scala:331)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.indexRoot(ScalaToplevelMtags.scala:56)
+	at scala.meta.internal.mtags.MtagsIndexer.index(MtagsIndexer.scala:19)
+	at scala.meta.internal.mtags.MtagsIndexer.index$(MtagsIndexer.scala:18)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.index(ScalaToplevelMtags.scala:43)
+	at scala.meta.internal.mtags.Mtags$.allToplevels(Mtags.scala:125)
+	at scala.meta.internal.metals.DefinitionProvider.fromMtags(DefinitionProvider.scala:376)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$4(DefinitionProvider.scala:296)
+	at scala.Option.orElse(Option.scala:477)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$1(DefinitionProvider.scala:296)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.DefinitionProvider.positionOccurrence(DefinitionProvider.scala:288)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$definitionOrReferences$1(MetalsLspService.scala:2564)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.MetalsLspService.definitionOrReferences(MetalsLspService.scala:2560)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$definition$1(MetalsLspService.scala:1404)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.definition(MetalsLspService.scala:1403)
+	at scala.meta.internal.metals.WorkspaceLspService.definition(WorkspaceLspService.scala:373)
+	at scala.meta.metals.lsp.DelegatingScalaService.definition(DelegatingScalaService.scala:69)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	... 13 more
+
+2024.03.27 23:31:07 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+мар. 27, 2024 11:31:10 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /home/grish-grdv/IdeaProjects/naumen/.metals/.reports/metals-full/2024-03-27/r_compiler-error_23-31-10-887.md
+2024.03.27 23:31:11 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:31:13 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+мар. 27, 2024 11:31:15 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /home/grish-grdv/IdeaProjects/naumen/.metals/.reports/metals-full/2024-03-27/r_compiler-error_23-31-15-520.md
+мар. 27, 2024 11:31:15 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /home/grish-grdv/IdeaProjects/naumen/.metals/.reports/metals-full/2024-03-27/r_compiler-error_23-31-15-763.md
+мар. 27, 2024 11:31:15 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /home/grish-grdv/IdeaProjects/naumen/.metals/.reports/metals-full/2024-03-27/r_compiler-error_23-31-15-910.md
+мар. 27, 2024 11:31:16 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /home/grish-grdv/IdeaProjects/naumen/.metals/.reports/metals-full/2024-03-27/r_compiler-error_23-31-16-041.md
+2024.03.27 23:31:17 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+мар. 27, 2024 11:31:31 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /home/grish-grdv/IdeaProjects/naumen/.metals/.reports/metals-full/2024-03-27/r_compiler-error_23-31-31-393.md
+2024.03.27 23:31:33 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+мар. 27, 2024 11:31:49 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:118)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: file:///home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala:11: error: malformed xml literal, expected:
+Expected (any-char | "{{" | "}}" | "&" | "&#" | "&#x" | "{" | "<xml:unparsed" | "<![CDATA[" | "<?" | "<!--" | "<" | "</"):11:2, found ""
+}
+ ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getXml(LegacyScanner.scala:937)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchLT$1(LegacyScanner.scala:295)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:303)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.loop(ScalaToplevelMtags.scala:331)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.indexRoot(ScalaToplevelMtags.scala:56)
+	at scala.meta.internal.mtags.MtagsIndexer.index(MtagsIndexer.scala:19)
+	at scala.meta.internal.mtags.MtagsIndexer.index$(MtagsIndexer.scala:18)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.index(ScalaToplevelMtags.scala:43)
+	at scala.meta.internal.mtags.Mtags$.allToplevels(Mtags.scala:125)
+	at scala.meta.internal.metals.DefinitionProvider.fromMtags(DefinitionProvider.scala:376)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$4(DefinitionProvider.scala:296)
+	at scala.Option.orElse(Option.scala:477)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$1(DefinitionProvider.scala:296)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.DefinitionProvider.positionOccurrence(DefinitionProvider.scala:288)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$definitionOrReferences$1(MetalsLspService.scala:2564)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.MetalsLspService.definitionOrReferences(MetalsLspService.scala:2560)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$definition$1(MetalsLspService.scala:1404)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.definition(MetalsLspService.scala:1403)
+	at scala.meta.internal.metals.WorkspaceLspService.definition(WorkspaceLspService.scala:373)
+	at scala.meta.metals.lsp.DelegatingScalaService.definition(DelegatingScalaService.scala:69)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	... 13 more
+
+мар. 27, 2024 11:31:53 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /home/grish-grdv/IdeaProjects/naumen/.metals/.reports/metals-full/2024-03-27/r_compiler-error_23-31-53-995.md
+мар. 27, 2024 11:31:55 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /home/grish-grdv/IdeaProjects/naumen/.metals/.reports/metals-full/2024-03-27/r_compiler-error_23-31-55-986.md
+мар. 27, 2024 11:31:57 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:118)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: file:///home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala:11: error: malformed xml literal, expected:
+Expected (any-char | "{{" | "}}" | "&" | "&#" | "&#x" | "{" | "<xml:unparsed" | "<![CDATA[" | "<?" | "<!--" | "<" | "</"):11:2, found ""
+}
+ ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getXml(LegacyScanner.scala:937)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchLT$1(LegacyScanner.scala:295)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:303)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.loop(ScalaToplevelMtags.scala:331)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.indexRoot(ScalaToplevelMtags.scala:56)
+	at scala.meta.internal.mtags.MtagsIndexer.index(MtagsIndexer.scala:19)
+	at scala.meta.internal.mtags.MtagsIndexer.index$(MtagsIndexer.scala:18)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.index(ScalaToplevelMtags.scala:43)
+	at scala.meta.internal.mtags.Mtags$.allToplevels(Mtags.scala:125)
+	at scala.meta.internal.metals.DefinitionProvider.fromMtags(DefinitionProvider.scala:376)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$4(DefinitionProvider.scala:296)
+	at scala.Option.orElse(Option.scala:477)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$1(DefinitionProvider.scala:296)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.DefinitionProvider.positionOccurrence(DefinitionProvider.scala:288)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$definitionOrReferences$1(MetalsLspService.scala:2564)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.MetalsLspService.definitionOrReferences(MetalsLspService.scala:2560)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$definition$1(MetalsLspService.scala:1404)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.definition(MetalsLspService.scala:1403)
+	at scala.meta.internal.metals.WorkspaceLspService.definition(WorkspaceLspService.scala:373)
+	at scala.meta.metals.lsp.DelegatingScalaService.definition(DelegatingScalaService.scala:69)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	... 13 more
+
+2024.03.27 23:31:59 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:32:00 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+мар. 27, 2024 11:32:02 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /home/grish-grdv/IdeaProjects/naumen/.metals/.reports/metals-full/2024-03-27/r_compiler-error_23-32-02-132.md
+мар. 27, 2024 11:32:03 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /home/grish-grdv/IdeaProjects/naumen/.metals/.reports/metals-full/2024-03-27/r_compiler-error_23-32-03-900.md
+мар. 27, 2024 11:32:04 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /home/grish-grdv/IdeaProjects/naumen/.metals/.reports/metals-full/2024-03-27/r_compiler-error_23-32-04-960.md
+2024.03.27 23:32:06 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:32:08 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+мар. 27, 2024 11:32:08 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /home/grish-grdv/IdeaProjects/naumen/.metals/.reports/metals-full/2024-03-27/r_compiler-error_23-32-08-603.md
+2024.03.27 23:32:10 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+мар. 27, 2024 11:32:13 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /home/grish-grdv/IdeaProjects/naumen/.metals/.reports/metals-full/2024-03-27/r_compiler-error_23-32-13-521.md
+2024.03.27 23:32:15 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:32:25 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:33:16 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:33:21 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+мар. 27, 2024 11:33:21 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /home/grish-grdv/IdeaProjects/naumen/.metals/.reports/metals-full/2024-03-27/r_compiler-error_23-33-21-262.md
+2024.03.27 23:33:22 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:33:25 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:33:28 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+мар. 27, 2024 11:33:29 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:118)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: file:///home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala:10: error: malformed xml literal, expected:
+Expected (any-char | "{{" | "}}" | "&" | "&#" | "&#x" | "{" | "<xml:unparsed" | "<![CDATA[" | "<?" | "<!--" | "<" | "</"):10:2, found ""
+}
+ ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getXml(LegacyScanner.scala:937)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchLT$1(LegacyScanner.scala:295)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:303)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.loop(ScalaToplevelMtags.scala:331)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.indexRoot(ScalaToplevelMtags.scala:56)
+	at scala.meta.internal.mtags.MtagsIndexer.index(MtagsIndexer.scala:19)
+	at scala.meta.internal.mtags.MtagsIndexer.index$(MtagsIndexer.scala:18)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.index(ScalaToplevelMtags.scala:43)
+	at scala.meta.internal.mtags.Mtags$.allToplevels(Mtags.scala:125)
+	at scala.meta.internal.metals.DefinitionProvider.fromMtags(DefinitionProvider.scala:376)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$4(DefinitionProvider.scala:296)
+	at scala.Option.orElse(Option.scala:477)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$1(DefinitionProvider.scala:296)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.DefinitionProvider.positionOccurrence(DefinitionProvider.scala:288)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$definitionOrReferences$1(MetalsLspService.scala:2564)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.MetalsLspService.definitionOrReferences(MetalsLspService.scala:2560)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$definition$1(MetalsLspService.scala:1404)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.definition(MetalsLspService.scala:1403)
+	at scala.meta.internal.metals.WorkspaceLspService.definition(WorkspaceLspService.scala:373)
+	at scala.meta.metals.lsp.DelegatingScalaService.definition(DelegatingScalaService.scala:69)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	... 13 more
+
+мар. 27, 2024 11:33:29 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:118)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: file:///home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala:10: error: malformed xml literal, expected:
+Expected (any-char | "{{" | "}}" | "&" | "&#" | "&#x" | "{" | "<xml:unparsed" | "<![CDATA[" | "<?" | "<!--" | "<" | "</"):10:2, found ""
+}
+ ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getXml(LegacyScanner.scala:937)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchLT$1(LegacyScanner.scala:295)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:303)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.loop(ScalaToplevelMtags.scala:331)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.indexRoot(ScalaToplevelMtags.scala:56)
+	at scala.meta.internal.mtags.MtagsIndexer.index(MtagsIndexer.scala:19)
+	at scala.meta.internal.mtags.MtagsIndexer.index$(MtagsIndexer.scala:18)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.index(ScalaToplevelMtags.scala:43)
+	at scala.meta.internal.mtags.Mtags$.allToplevels(Mtags.scala:125)
+	at scala.meta.internal.metals.DefinitionProvider.fromMtags(DefinitionProvider.scala:376)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$4(DefinitionProvider.scala:296)
+	at scala.Option.orElse(Option.scala:477)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$1(DefinitionProvider.scala:296)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.DefinitionProvider.positionOccurrence(DefinitionProvider.scala:288)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$definitionOrReferences$1(MetalsLspService.scala:2564)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.MetalsLspService.definitionOrReferences(MetalsLspService.scala:2560)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$definition$1(MetalsLspService.scala:1404)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.definition(MetalsLspService.scala:1403)
+	at scala.meta.internal.metals.WorkspaceLspService.definition(WorkspaceLspService.scala:373)
+	at scala.meta.metals.lsp.DelegatingScalaService.definition(DelegatingScalaService.scala:69)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	... 13 more
+
+2024.03.27 23:33:32 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:33:33 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+мар. 27, 2024 11:33:39 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:118)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: file:///home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala:9: error: malformed xml literal, expected:
+Expected (any-char | "{{" | "}}" | "&" | "&#" | "&#x" | "{" | "<xml:unparsed" | "<![CDATA[" | "<?" | "<!--" | "<" | "</"):9:2, found ""
+}
+ ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getXml(LegacyScanner.scala:937)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchLT$1(LegacyScanner.scala:295)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:303)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.loop(ScalaToplevelMtags.scala:331)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.indexRoot(ScalaToplevelMtags.scala:56)
+	at scala.meta.internal.mtags.MtagsIndexer.index(MtagsIndexer.scala:19)
+	at scala.meta.internal.mtags.MtagsIndexer.index$(MtagsIndexer.scala:18)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.index(ScalaToplevelMtags.scala:43)
+	at scala.meta.internal.mtags.Mtags$.allToplevels(Mtags.scala:125)
+	at scala.meta.internal.metals.DefinitionProvider.fromMtags(DefinitionProvider.scala:376)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$4(DefinitionProvider.scala:296)
+	at scala.Option.orElse(Option.scala:477)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$1(DefinitionProvider.scala:296)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.DefinitionProvider.positionOccurrence(DefinitionProvider.scala:288)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$definitionOrReferences$1(MetalsLspService.scala:2564)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.MetalsLspService.definitionOrReferences(MetalsLspService.scala:2560)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$definition$1(MetalsLspService.scala:1404)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.definition(MetalsLspService.scala:1403)
+	at scala.meta.internal.metals.WorkspaceLspService.definition(WorkspaceLspService.scala:373)
+	at scala.meta.metals.lsp.DelegatingScalaService.definition(DelegatingScalaService.scala:69)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	... 13 more
+
+2024.03.27 23:33:43 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:34:16 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:34:19 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:34:32 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:34:36 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:34:42 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:34:44 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:34:46 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:34:49 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:34:50 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:34:53 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:34:55 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:34:57 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:35:00 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:35:03 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:35:06 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:35:49 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:35:50 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:35:53 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:35:56 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:35:58 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:36:03 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:36:04 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:36:06 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:36:09 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:36:11 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:36:12 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:36:19 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+мар. 27, 2024 11:36:20 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4798
+2024.03.27 23:36:33 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:36:36 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:36:40 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:36:41 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:36:48 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:36:50 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:36:51 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:36:55 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:37:02 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:37:05 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:37:17 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:37:18 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:37:20 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:37:22 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:37:36 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:37:37 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:37:39 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:37:43 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:37:47 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:37:56 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:38:00 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:38:04 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:38:07 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:38:07 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:38:09 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:38:10 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:39:02 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:39:04 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:39:16 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:39:19 WARN  Using indexes to guess the definition of Table
+2024.03.27 23:39:21 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:39:22 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:39:22 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:39:32 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:39:33 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:39:49 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:39:51 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:39:52 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:39:57 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:39:59 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:40:03 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:40:06 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:40:10 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:40:15 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:40:18 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:40:34 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Table.scala
+2024.03.27 23:40:57 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:40:59 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:41:06 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:41:07 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:41:08 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:41:10 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:41:13 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:42:51 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:42:56 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.27 23:42:57 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:24:07 INFO  Shutting down server
+2024.03.28 23:24:07 INFO  shutting down Metals
+2024.03.28 23:24:07 INFO  Exiting server
+2024.03.28 23:31:25 INFO  Started: Metals version 1.2.2 in folders '/home/grish-grdv/IdeaProjects/naumen' for client Visual Studio Code 1.87.2.
+23:31:25.564 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+23:31:25.566 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+23:31:25.566 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+23:31:25.568 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+23:31:25.568 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@4f2410ac ...
+23:31:25.568 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+23:31:25.568 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+23:31:25.568 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@4f2410ac ...
+23:31:25.569 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/grish-grdv/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+23:31:25.572 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+23:31:25.572 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+23:31:25.572 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+23:31:25.572 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+23:31:25.572 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+23:31:25.572 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+23:31:25.574 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+23:31:25.575 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+23:31:25.575 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+23:31:25.575 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+23:31:25.576 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+23:31:25.624 [pool-1-thread-1] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/grish-grdv/IdeaProjects/naumen/.metals/metals (H2 2.2)
+23:31:25.624 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+23:31:25.624 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+23:31:25.625 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+23:31:25.625 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+23:31:25.627 [pool-1-thread-1] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+23:31:25.627 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+23:31:25.627 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+23:31:25.631 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+23:31:25.633 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+23:31:25.636 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+23:31:25.636 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+23:31:25.636 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+23:31:25.636 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+23:31:25.636 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+23:31:25.637 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+23:31:25.637 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+23:31:25.637 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+23:31:25.637 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+23:31:25.637 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+23:31:25.642 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.010s)
+23:31:25.643 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+23:31:25.646 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+23:31:25.648 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+23:31:25.651 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 35 of 100M
+2024.03.28 23:31:25 WARN  no build tool detected in workspace '/home/grish-grdv/IdeaProjects/naumen'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2024.03.28 23:31:25 WARN  Build server is not auto-connectable.
+2024.03.28 23:31:28 INFO  no build target found for /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.03.28 23:31:47 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:31:48 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:31:52 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:32:07 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:32:08 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:32:10 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:32:14 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:32:16 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:32:18 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:32:25 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+мар. 28, 2024 11:32:41 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 145
+2024.03.28 23:32:42 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:32:44 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:32:45 WARN  Using indexes to guess the definition of table
+мар. 28, 2024 11:32:47 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 169
+2024.03.28 23:32:52 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:32:53 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:32:56 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:33:01 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:33:05 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:33:06 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:33:11 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:33:14 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:33:18 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:33:20 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:33:23 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:33:35 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:33:58 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:34:00 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:34:03 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:34:07 WARN  Using indexes to guess the definition of ReferenceCell
+2024.03.28 23:34:08 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:34:13 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:34:34 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:34:36 WARN  Using indexes to guess the definition of table
+2024.03.28 23:34:36 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+мар. 28, 2024 11:34:37 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 508
+2024.03.28 23:34:39 WARN  Using indexes to guess the definition of table
+мар. 28, 2024 11:34:51 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 538
+2024.03.28 23:34:54 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:34:56 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:38:26 WARN  Using indexes to guess the definition of ReferenceCell
+2024.03.28 23:38:26 WARN  Using indexes to guess the definition of ReferenceCell
+2024.03.28 23:38:27 WARN  Using indexes to guess the definition of ReferenceCell
+2024.03.28 23:38:27 WARN  Using indexes to guess the definition of table
+2024.03.28 23:38:29 WARN  Using indexes to guess the definition of ReferenceCell
+2024.03.28 23:38:29 WARN  Using indexes to guess the definition of ReferenceCell
+2024.03.28 23:38:30 WARN  Using indexes to guess the definition of ReferenceCell
+2024.03.28 23:38:32 WARN  Using indexes to guess the definition of Cell
+2024.03.28 23:38:33 WARN  Using indexes to guess the definition of Cell
+2024.03.28 23:38:34 WARN  Using indexes to guess the definition of Cell
+2024.03.28 23:38:34 WARN  Using indexes to guess the definition of table
+2024.03.28 23:38:35 WARN  Using indexes to guess the definition of table
+2024.03.28 23:38:37 WARN  Using indexes to guess the definition of table
+2024.03.28 23:38:37 WARN  Using indexes to guess the definition of table
+2024.03.28 23:38:39 WARN  Using indexes to guess the definition of table
+2024.03.28 23:38:39 WARN  Using indexes to guess the definition of table
+2024.03.28 23:38:47 WARN  Using indexes to guess the definition of Cell
+2024.03.28 23:38:47 WARN  Using indexes to guess the definition of Cell
+2024.03.28 23:38:48 WARN  Using indexes to guess the definition of Cell
+2024.03.28 23:38:53 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:38:55 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:39:06 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+мар. 28, 2024 11:39:07 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 762
+2024.03.28 23:39:07 WARN  Using indexes to guess the definition of table
+2024.03.28 23:39:07 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:39:11 WARN  Using indexes to guess the definition of Cell
+2024.03.28 23:39:11 WARN  Using indexes to guess the definition of Cell
+2024.03.28 23:39:13 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:39:16 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:39:16 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:39:21 WARN  Using indexes to guess the definition of Cell
+2024.03.28 23:39:24 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:39:26 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:39:27 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:39:27 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:39:27 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:39:46 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:40:05 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:40:05 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+мар. 28, 2024 11:40:11 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 953
+2024.03.28 23:40:15 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:40:16 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:40:18 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:40:19 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:40:22 WARN  no build target for: /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala
+2024.03.28 23:54:41 INFO  Shutting down server
+2024.03.28 23:54:41 INFO  shutting down Metals
+2024.03.28 23:54:41 INFO  Exiting server
+2024.03.29 00:29:40 INFO  Started: Metals version 1.2.2 in folders '/home/grish-grdv/IdeaProjects/naumen' for client Visual Studio Code 1.87.2.
+00:29:40.955 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+00:29:40.957 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+00:29:40.957 [pool-1-thread-1] INFO org.flywaydb.core.internal.license.VersionPrinter -- 
+00:29:40.959 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/callback' ...
+00:29:40.959 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@4f2410ac ...
+00:29:40.959 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Unable to resolve location classpath:db/callback.
+00:29:40.959 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classpath resources at 'classpath:db/migration' ...
+00:29:40.959 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@4f2410ac ...
+00:29:40.959 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning URL: jar:file:/home/grish-grdv/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/metals_2.13/1.2.2/metals_2.13-1.2.2.jar!/db/migration
+00:29:40.962 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/
+00:29:40.962 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V1__Create_tables.sql
+00:29:40.962 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V2__Server_discovery.sql
+00:29:40.962 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V3__Jar_symbols.sql
+00:29:40.962 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Found resource: db/migration/V4__Fingerprints.sql
+00:29:40.962 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.classpath.ClassPathScanner -- Scanning for classes at classpath:db/migration
+00:29:40.964 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+00:29:40.965 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V2__Server_discovery.sql
+00:29:40.965 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V1__Create_tables.sql
+00:29:40.965 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V3__Jar_symbols.sql
+00:29:40.965 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.resource.ResourceNameValidator -- Validating V4__Fingerprints.sql
+00:29:41.020 [pool-1-thread-1] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:h2:file:/home/grish-grdv/IdeaProjects/naumen/.metals/metals (H2 2.2)
+00:29:41.020 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Driver: H2 JDBC Driver 2.2.224 (2023-09-17)
+00:29:41.020 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- DDL Transactions Supported: false
+00:29:41.020 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Schemas: 
+00:29:41.021 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.schemahistory.SchemaHistoryFactory -- Default schema: null
+00:29:41.023 [pool-1-thread-1] WARN org.flywaydb.core.internal.database.base.Database -- Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+00:29:41.023 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.callback.SqlScriptCallbackFactory -- Scanning for SQL callbacks ...
+00:29:41.023 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+00:29:41.027 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbValidate -- Validating migrations ...
+00:29:41.028 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+00:29:41.031 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+00:29:41.031 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+00:29:41.031 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+00:29:41.031 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+00:29:41.031 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+00:29:41.032 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V2__Server_discovery.sql (filename: V2__Server_discovery.sql)
+00:29:41.032 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V1__Create_tables.sql (filename: V1__Create_tables.sql)
+00:29:41.032 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V3__Jar_symbols.sql (filename: V3__Jar_symbols.sql)
+00:29:41.032 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/ (filename: )
+00:29:41.032 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.scanner.Scanner -- Filtering out resource: db/migration/V4__Fingerprints.sql (filename: V4__Fingerprints.sql)
+00:29:41.036 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 4 migrations (execution time 00:00.009s)
+00:29:41.037 [pool-1-thread-1] DEBUG org.flywaydb.core.internal.command.DbSchemas -- Skipping creation of existing schema: "PUBLIC"
+00:29:41.040 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "PUBLIC": 4
+00:29:41.042 [pool-1-thread-1] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "PUBLIC" is up to date. No migration necessary.
+00:29:41.049 [pool-1-thread-1] DEBUG org.flywaydb.core.FlywayExecutor -- Memory usage: 37 of 100M
+2024.03.29 00:29:41 WARN  no build tool detected in workspace '/home/grish-grdv/IdeaProjects/naumen'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2024.03.29 00:29:41 WARN  Build server is not auto-connectable.
+2024.03.29 00:29:42 INFO  no build target found for /home/grish-grdv/IdeaProjects/naumen/homeworks/homework_3/src/main/scala/Cell.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.03.29 00:29:44 INFO  time: code lens generation in 2.85s
+2024.03.29 00:30:22 INFO  Shutting down server
+2024.03.29 00:30:22 INFO  shutting down Metals
+2024.03.29 00:30:22 INFO  Exiting server
