@@ -94,3 +94,13 @@ span.import {
     color: #0e84b5;
     font-weight: bold;
 }
+
+.lecture6 .catsZioImg {
+    width: 50%;
+    height: 80vh;
+    object-fit: contain;
+}
+
+.lecture6 ul, .lecture6 p, .lecture6 ol {
+    padding: 0 25px;
+}
