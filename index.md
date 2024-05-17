@@ -15,3 +15,6 @@ layout: default
 * [Задание 1](homeworks/homework_1/homework_1.md) [папка в GitHub](https://github.com/naumen-student/naumen.scala.course.2024.spring/tree/master/homeworks/homework_1)
 * [Задание 2](homeworks/homework_2/homework_2.md) [папка в GitHub](https://github.com/naumen-student/naumen.scala.course.2024.spring/tree/master/homeworks/homework_2)
 * [Задание 3](homeworks/homework_3/homework_3.md) [папка в GitHub](https://github.com/naumen-student/naumen.scala.course.2024.spring/tree/master/homeworks/homework_3)
+
+### Материалы практик
+* Практика "Функциональное программирование" [папка в GitHub](https://github.com/naumen-student/naumen.scala.course.2024.spring/tree/master/practice/functionalProgramming) 
