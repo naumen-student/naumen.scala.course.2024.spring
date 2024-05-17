@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+
+    <title>ZIO Функциональный эффект</title>
+
+    <meta name="description" content="ZIO Функциональный эффект">
+    <meta name="author" content="Ivan Slastikhin">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css" id="theme">
+    <link rel="stylesheet" href="css/hljs/vs.css" id="highlight-theme">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/custom.css">
+
+</head>
+<body>
+<div class="reveal lecture6">
+    <div class="footer">
+        <span class="corp-name"><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNAUMEN</b></span>
+    </div>
+    <div class="slides">
+        <section>
+            <h1>ZIO</h1>
+            <h1>Функциональный эффект</h1>
+            <p>Иван Сластихин</p>
+        </section>
+    </div>
+    <div class="slides">
+        <section>
+            <h2>Проблема контроля побочных эффектов</h2>
+        </section>
+        <section>
+            <h3>Правила работы с побочными эффектами</h3>
+            <ol>
+                <li>Любое взаимодействие с внешним миром должно быть четко обозначено</li>
+                <li>Любой результат взаимодействия с миром должен быть завернут в “безопасную” оболочку</li>
+                <li>Для любого варианта возможного поведения стороннего эффекта необходимо четко указать сценарий
+                    реагирования.
+                </li>
+            </ol>
+        </section>
+        <section>
+            <div class="code-block">
+						<pre>
+							<code class="scala">
+trait DataBaseService[T] {
+  def find(id: String): T
+  def insert(entity: T): Unit
+}
+
+object SideEffect {
+  class Person(id: String, name: String, age: Int)
+
+  def addPersonIfNotExists(person: Person): Unit = ???
+}
+							</code>
+						</pre>
+            </div>
+        </section>
+        <section style="overflow: scroll">
+            <div class="code-block">
+							<pre><code class="scala">
+trait DataBaseService[T] {
+  def find(id: String): Either[Throwable, Option[T]]
+  def insert(entity: T): Either[Throwable, Unit]
+}
+
+object SideEffect {
+  case class Person(id: String, name: String, age: Int)
+
+  def addPersonIfNotExists(person: Person)(dbService: DataBaseService[Person]): Unit = {
+    val personQueryResult = dbService.find(person.id)
+    //Проверяем что запрос прошел без ошибок
+    val result: Either[Throwable, Unit] =
+	  if (personQueryResult.isRight) {
+	    //Извлекаем объект из контейнера Either
+		val existsPersonOpt = personQueryResult.getOrElse(None)
+		//Проверяем, что запрос вернул не пустой результат
+		val insertQueryResult =
+		  if (existsPersonOpt.isEmpty)
+		    dbService.insert(person)
+		  else
+		    Right(()) //Наличие сущ. записи - не ошибка, ставим заглушку
+
+		  insertQueryResult
+		} else {
+		  personResultQuery.map(_ => ()) //Возвращаем наш запрос с ошибкой,
+										 //но приводим к нужному типу
+		  //Обрабатываем итоговый результат, в случае ошибки, просто выводим
+		  result.fold(err => println(err.getMessage), res => res)
+		}
+  }
+						</code>
+					</pre>
+            </div>
+        </section>
+        <section>
+            <div class="code-block">
+					<pre>
+						<code class="scala">
+trait DataBaseService[T] {
+  def find(id: String): Either[Throwable, Option[T]]
+  def insert(entity: T): Either[Throwable, Unit]
+}
+
+object SideEffect {
+  case class Person(id: String, name: String, age: Int)
+
+  def addPersonIfNotExists(person: Person)(dbService: DataBaseService[Person]): Unit = {
+    dbService.find(person.id)
+      .fold(err => println(err.getMessage), {
+        case Some(_) => Right(())
+        case None => dbService.insert(person)
+          .fold(err => println(err.getMessage), _)
+	  })
+    }
+  }
+						</code>
+					</pre>
+            </div>
+        </section>
+        <section>
+            <h2>Не очень удобно. Правда?</h2>
+        </section>
+        <section>
+            <h2>Функциональные эффекты</h2>
+        </section>
+        <section style="text-align: left">
+            <p>
+                <b>Функциональный эффект</b> - полиморфный тип объекта, являющийся надстройкой над функцией. Он
+                позволяет работать с результатом вызова функции без необходимости реального вызова ее выполнения.
+            </p>
+            <p>
+                Функциональный эффект включает в себя набор инструментов для контроля зависимостей, а также обработки
+                результатов взаимодействия с побочным эффектом.
+            </p>
+            <p>
+                Функциональный эффект - IO монада.
+            </p>
+        </section>
+        <section>
+            <h2>Минимальный функциональный эффект</h2>
+            <div class="code-block">
+            <pre>
+						<code class="scala">
+case class IO[A](unsafeFunction: Function[Unit, A]) {
+  def unsafeRun(): A = unsafeFunction()
+
+  def unit[B](x: B): IO[B] = IO(_ => x)
+
+  def map[B](f: A => B): IO[B] = IO[B](unsafeFunction then f)
+
+  def flatMap[B](f: A => IO[B]): IO[B] = (unsafeFunction then f)()
+}
+						</code>
+					</pre>
+            </div>
+        </section>
+        <section style="text-align: left">
+            <p>
+                Идеальная программа в функциональном стиле - композиция функций.
+            </p>
+            <p>
+                Функциональные эффекты реализуют эту идею, комбинируя функции в одном объекте.
+            </p>
+            <p>
+                Программа с использованием функциональных эффектов или IO монад - один огромный объект монада, который
+                как клубок ниток содержит в себе все функции. При запуске программы этот клубок постепенно
+                распутывается, и мы получаем результат.
+            </p>
+        </section>
+        <section>
+            <div class="code-block">
+					<pre>
+						<code class="scala">
+val randomFirst: IO[Int] = IO(_ => Random.nextInt(25))
+val randomSecond: IO[Int] = IO(_ => Random.nextInt(25))
+
+lazy val printOfTwoRandomNumsIO =
+  randomFirst
+    .flatMap(f => randomSecond.map(s => (f, s)))
+    .map { case (f, s) => f + s }
+    .map(result => println(result))
+
+  printOfTwoRandomNumsIO.unsafeRun()
+						</code>
+					</pre>
+            </div>
+        </section>
+        <section>
+            <div class="code-block">
+					<pre>
+						<code class="scala">
+val randomFirst: IO[Int] = IO(_ => Random.nextInt(25))
+val randomSecond: IO[Int] = IO(_ => Random.nextInt(25))
+
+lazy val printOfTwoRandomNumsIO =
+  for {
+    f <- randomFirst
+    s <- randomSecond
+    sum <- IO(_ => f + s)
+    _ <- IO(_ => println(sum))
+  } yield ()
+
+printOfTwoRandomNumsIO.unsafeRun()
+						</code>
+					</pre>
+            </div>
+        </section>
+        <section>
+            <div style="display: flex; ">
+                <img src="img/lecture_6/cats.png" class="catsZioImg">
+                <img src="img/lecture_6/zio.png" class="catsZioImg">
+            </div>
+            <div style="display: flex; justify-content: space-around">
+                <span>Cats Effect</span>
+                <span>ZIO</span>
+            </div>
+        </section>
+        <section>
+            <h1>ZIO</h1>
+        </section>
+        <section>
+            <p>ZIO[<span style="color: blue">-R</span>, <span style="color: red">+E</span>, <span style="color: green">+A</span>]
+            </p>
+            <p><span style="color: blue">R</span> - тип зависимостей</p>
+            <p><span style="color: red">E</span> - тип ошибки</p>
+            <p><span style="color: green">A</span> - тип результата</p>
+            <p>ZIO[R, E, A] &hArr; R => Either[E, A]</p>
+        </section>
+        <section>
+            <img src="img/lecture_6/road.png">
+        </section>
+        <section class="lecture6">
+            <p style="font-weight: bold">ZIO[Clock with Random with DBService, Throwable, String]</p>
+            <ul>
+                <li>Эффекту для запуска необходимы реализации интерфейсов общения с часами, случайными числами и сервиса
+                    базы данных
+                </li>
+                <li>Эффект может вернуть ошибку типа Throwable</li>
+                <li>При удачном выполнении результатом будет являться строка</li>
+            </ul>
+        </section>
+        <section>
+            <p style="font-weight: bold">ZIO Aliases</p>
+            <ul>
+                <li><span style="font-weight: bold">Task[+A]</span> = ZIO[Any, Throwable, A]
+                    <ol style="list-style-type: lower-latin">
+                        <li style="font-size: xx-large">Эффект не требует никаких внешних зависимостей</li>
+                        <li style="font-size: xx-large">Может вернуть ошибку типа Throwable</li>
+                        <li style="font-size: xx-large">При удачном завершении возвращает A</li>
+                    </ol>
+                </li>
+                <li><span style="font-weight: bold">UIO[+A]</span> = ZIO[Any, Nothing, A]
+                    <ol style="list-style-type: lower-latin">
+                        <li style="font-size: xx-large">Эффект не требует никаких внешних зависимостей</li>
+                        <li style="font-size: xx-large">Эффект не возвращает никаких ошибок</li>
+                        <li style="font-size: xx-large">При удачном завершении возвращает A</li>
+                    </ol>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <p style="font-weight: bold">ZIO Aliases</p>
+            <ul>
+                <li><span style="font-weight: bold">RIO[-R, +A]</span> = ZIO[R, Throwable, A]
+                    <ol style="list-style-type: lower-latin">
+                        <li style="font-size: xx-large">Необходимы зависимости типа R для запуска</li>
+                        <li style="font-size: xx-large">Может вернуть ошибку типа Throwable</li>
+                        <li style="font-size: xx-large">При удачном завершении возвращает A</li>
+                    </ol>
+                </li>
+                <li><span style="font-weight: bold">IO[+E, +A]</span> = ZIO[Any, E, A]
+                    <ol style="list-style-type: lower-latin">
+                        <li style="font-size: xx-large">Эффект не требует никаких внешних зависимостей</li>
+                        <li style="font-size: xx-large">Может вернуть ошибку типа E</li>
+                        <li style="font-size: xx-large">При удачном завершении возвращает A</li>
+                    </ol>
+                </li>
+                <li><span style="font-weight: bold">URIO[-R, +A]</span> = ZIO[R, Nothing, A]
+                    <ol style="list-style-type: lower-latin">
+                        <li style="font-size: xx-large">Необходимы зависимости типа R для запуска</li>
+                        <li style="font-size: xx-large">Эффект не возвращает никаких ошибок</li>
+                        <li style="font-size: xx-large">При удачном завершении возвращает A</li>
+                    </ol>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Создание ZIO объектов</h2>
+        </section>
+        <section>
+            <p style="font-weight: bold">Элементарные конструкторы</p>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+val ok: ZIO[Any, Nothing, Int] = ZIO.succeed(42)
+
+val fail: IO[Throwable, Nothing] = ZIO.fail(new Throwable("Error!"))
+				    </code>
+				</pre>
+            </div>
+        </section>
+        <section>
+            <p style="font-weight: bold">Конструкторы из Scala объектов</p>
+            <p style="font-weight: bold">Элементарные конструкторы</p>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+val fromOption: IO[Option[Nothing], String] = ZIO.fromOption(Some("Hello"))
+// Если Option - Some, то возвращает его содержимое
+// если Option - None, то возвращает пустую ошибку
+
+val fromEither: IO[String, Int] = ZIO.fromEither(Left[String, Int]("Not good"))
+// Right - возвращает содержимое как результат
+// Left - возвращает содержимое как ошибку
+
+val fromTry: Task[Int] = ZIO.fromTry(Try("24".toInt))
+// Если небыло исключения - возвращает результат
+// в случае исключения - возвращает Throwable
+						</code>
+				</pre>
+            </div>
+        </section>
+        <section>
+            <h2>Базовые операции</h2>
+        </section>
+        <section>
+            <p style="font-weight: bold">Map</p>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+val map: ZIO[Any, Nothing, String] = ZIO.succeed(42).map(_.toString)
+						</code>
+					</pre>
+            </div>
+            <p style="font-size: x-large; text-align: left">Применяет функцию к возвращаемому объекту</p>
+        </section>
+        <section>
+            <p style="font-weight: bold">FlatMap</p>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+val flatMapSuccess: ZIO[Any, Nothing, Int] =
+  ZIO.succeed(25).flatMap(f => ZIO.succeed(23 + f)
+						</code>
+					</pre>
+            </div>
+            <p style="font-size: x-large; text-align: left">Применяет функцию к возвращаемому объекту (в данном случае
+                вернет 48)</p>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+val flatMapFail: ZIO[Any, String, Int] =
+  ZIO.succeed(25).flatMap(f => ZIO.fail("Error"))
+						</code>
+					</pre>
+            </div>
+            <p style="font-size: x-large; text-align: left">В случае, если один из ZIO возвращает ошибку, то и их
+                комбинация через flatMap будет также возвращать ошибку</p>
+        </section>
+        <section>
+            <p style="font-weight: bold">For-yield</p>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+val forYield: ZIO[Any, Serializable, String] =
+for {
+  f <- ZIO.fromOption("42".toIntOption) // f = 42
+  s <- ZIO.fromOption("0".toIntOption) // s = 0
+  div <- ZIO.fromTry(Try(f / s)) // zio перейдет в состояние ошибки
+  result <- ZIO.succeed("ok")    // эта часть не будет выполнена
+} yield result
+// в forYield будет ZIO с ошибкой типа Throwable
+						</code>
+					</pre>
+            </div>
+        </section>
+        <section>
+            <p style="font-weight: bold">Zip</p>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+val helloWorld: ZIO[Any, Nothing, (String, String)] =
+  (ZIO.succeed("Hello") zip ZIO.succeed("World"))
+						</code>
+					</pre>
+            </div>
+            <p style="font-size: x-large; text-align: left">Zip действует аналогично Option.<br>
+                Если хоть один из zio возвращает ошибку, то и их zip возвращает ошибку.<br>
+                Если же оба возвращают значения, то zip вернет кортеж из них.</p>
+        </section>
+        <section>
+            <h2>Обработка ошибок</h2>
+        </section>
+        <section>
+            <p style="font-weight: bold">MapError</p>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+val errorWithType: ZIO[Any, SpecialError, Unit] =
+  ZIO.fail(new Throwable("Error!"))
+    .mapError(err => SpecialError(err.getMessage))
+						</code>
+					</pre>
+            </div>
+            <p style="font-size: x-large; text-align: left">Работает аналогично map, только применяет функцию к объекту
+                ошибки</p>
+        </section>
+        <section>
+            <p style="font-weight: bold">MapError</p>
+            <p style="font-size: x-large; text-align: left">Ошибки можно комбинировать</p>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+val zio1 = ZIO.fail("First zio error;")
+
+val zio2 = ZIO.succeed("hello")
+  .flatMap(_ => zio1).mapError(err => err + " Second zio error;")
+
+val zio3 = ZIO.succeed("world")
+  .flatMap(_ => zio2).mapError(err => err + " Third zio error;")
+
+zio3.catchAll(err => Console.printLine(err))
+						</code>
+					</pre>
+            </div>
+            <p style="font-size: x-large; text-align: left">Вывод:<br>
+                First zio error; Second zio error; Third zio error;</p>
+        </section>
+        <section>
+            <p style="font-weight: bold">CatchAll</p>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+val errorCatchedAll: ZIO[Any, Nothing, String] = {
+  for {
+    _ <- ZIO.fromOption(None)
+    _ <- ZIO.fail(new Throwable("F Error"))
+    _ <- ZIO.fail(SpecialError("Special"))
+  } yield "ok"
+}.catchAll { err: Serializable =>
+  ZIO.succeed("Failed with error " + err.toString)
+}
+						</code>
+					</pre>
+            </div>
+            <p style="font-size: x-large; text-align: left">catchAll принимает функцию с аргументом - обобщенным типом
+                ошибки,
+                которая возвращает ZIO</p>
+        </section>
+        <section>
+            <p style="font-weight: bold">CatchSome</p>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+val errorCatchedSome: ZIO[Any, Serializable, String] = {
+  for {
+    _ <- ZIO.fromOption(None)
+    _ <- ZIO.fail(new Throwable("F Error"))
+    _ <- ZIO.fail(SpecialError("Special"))
+  } yield "ok"
+}.catchSome {
+  case err: Option[Nothing] => ZIO.succeed("Not found option")
+  case SpecialError(errMsg) => ZIO.succeed("Special error " + errMsg)
+  case err: Throwable => ZIO.succeed("Throw error" + err.getMessage)
+  case _ => ZIO.succeed("Other error")
+}
+						</code>
+					</pre>
+                </div>
+        </section>
+        <section>
+            <p style="font-weight: bold">OrElse</p>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+val orElse = ZIO.fromOption(None).orElse(ZIO.succeed(25))
+
+val orElseSucceed = ZIO.fromOption(None).orElseSucceed(25)
+
+val orElseFail = ZIO.fromOption(None)
+  .orElseFail(new Throwable("Объект не найден"))
+						</code>
+					</pre>
+            </div>
+        </section>
+        <section>
+            <h2>Управление зависимостями</h2>
+        </section>
+        <section>
+            <p>ZIO[<span style="color: blue">-R</span>, <span style="color: red">+E</span>, <span style="color: green">+A</span>]
+            </p>
+            <p><span style="color: blue">R</span> - тип зависимостей</p>
+            <p><span style="color: red">E</span> - тип ошибки</p>
+            <p><span style="color: green">A</span> - тип результата</p>
+        </section>
+        <section>
+            <p style="font-weight: bold">ZIO.service</p>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+trait NameService {
+  def name: String
+}
+
+trait AgeService {
+  def age: Int
+}
+
+val nameWithAge: ZIO[NameService with AgeService, Nothing, String] =
+  for {
+    nameServ <- ZIO.service[NameService]
+    ageServ <- ZIO.service[AgeService]
+    res = nameServ.name + ageServ.age
+  } yield res
+						</code>
+					</pre>
+            </div>
+        </section>
+        <section>
+            <p style="font-weight: bold">B with A &hArr; A with B</p>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+type PersonInfo = NameService with AgeService
+val useAandB: ZIO[PersonInfo, Nothing, String] =
+  for {
+    nameServ <- ZIO.service[NameService]
+    ageServ <- ZIO.service[AgeService]
+    res = nameServ.name + ageServ.age
+} yield res
+						</code>
+					</pre>
+            </div>
+        </section>
+        <section>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+trait Logger {
+  def log(str: String): Task[Unit] // ZIO[Any, Throwable, Unit]
+}
+
+val zioWithLogAge: ZIO[Logger with AgeService, Throwable, Int] =
+  for {
+    ageServ <- ZIO.service[AgeService]
+    logger <- ZIO.service[Logger]
+    age = ageServ.age
+    _ <- logger.log(age.toString)
+} yield age
+
+val zioWithAwithNwithLogger: ZIO[Logger with AgeService with NameService, Throwable, String] =
+  for {
+    nameServ <- ZIO.service[NameService]
+    name = nameServ.name
+    age <- zioWithLogAge
+    res = name + age
+} yield res
+						</code>
+					</pre>
+            </div>
+            <p>Типы всегда приводятся к обобщенным</p>
+        </section>
+        <section>
+            <p style="font-weight: bold">serviceWithZIO</p>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+object AgeZio {
+  def ageZ: ZIO[AgeService, Nothing, Int] = ZIO.serviceWithZIO[AgeService](_.age)
+}
+
+object LoggerZio {
+  def log(str: String): ZIO[Logger, Throwable, Unit] =
+    ZIO.serviceWithZIO[Logger](_.log(str))
+}
+
+val zioWithLogAge: ZIO[Logger with AgeService, Throwable, Int] =
+  for {
+    age <- AgeZio.ageZ
+    _ <- LoggerZio.log(age.toString)
+} yield age
+						</code>
+					</pre>
+            </div>
+        </section>
+        <section data-auto-animate>
+            <p style="font-weight: bold">Старт программы</p>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+object Main extends ZIOAppDefault {
+  import Temps._
+
+  override def run: ZIO[ZIOAppArgs with Scope, Any, Any] = {
+    zioWithLogAge
+      .map(res => println(res))
+  }
+}
+						</code>
+					</pre>
+            </div>
+        </section>
+        <section data-auto-animate>
+            <p style="font-weight: bold">Старт программы</p>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+object Main extends ZIOAppDefault {
+  import Temps._
+
+  override def run: ZIO[ZIOAppArgs with Scope, Any, Any] = {
+    zioWithLogAge
+      .map(res => println(res))
+  }
+}
+						</code>
+					</pre>
+            </div>
+            <p style="font-size: x-large; color: red">Call your effect's provide method with the layers you need.</p>
+        </section>
+        <section data-auto-animate>
+            <p style="font-weight: bold">Zlayer</p>
+            <p>type ZLayer[
+                <span style="color: blue">-RIn</span>,
+                <span style="color: red">+E</span>,
+                <span style="color: green">+ROut</span>] =
+                <span style="color: blue">RIn</span> => async Either[
+                <span style="color: red">E</span>,
+                <span style="color: green">ROut</span>]
+        </section>
+        <section>
+            <p style="font-weight: bold">ZLayer.succeed</p>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+object LoggerObj {
+  class LoggerImpl extends Logger {
+    override def log(str: String): Task[Unit] = Console.printLine(str)
+  }
+
+  val live: ZLayer[Any, Nothing, Logger] = ZLayer.succeed(new LoggerImpl)
+}
+						</code>
+					</pre>
+            </div>
+        </section>
+        <section>
+            <p style="font-weight: bold">ZLayer.fromFunction</p>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+object AgeObj {
+  trait AgeService {
+   def age: Int
+  }
+
+  class AgeServiceImpl(nameService: NameService) extends AgeService {
+    override def age: Int =
+      nameService.name match {
+        case "Александр" => 21
+        case "Василий" => 40
+        case _ => 20
+      }
+  }
+
+  val live: ZLayer[NameService, Nothing, AgeService] =
+    ZLayer.fromFunction(new AgeServiceImpl(_))
+}
+						</code>
+					</pre>
+            </div>
+        </section>
+        <section>
+            <p style="font-weight: bold">ZLayer.fromZIO</p>
+            <div class="code-block">
+                <pre>
+			    	<code class="scala">
+object NameObj {
+  trait NameService {
+    def name: String
+  }
+
+  class NameServiceImpl extends NameService {
+    override def name: String =
+      List("Александр", "Василий", "Роман")(util.Random.nextInt(3))
+  }
+
+  val live: ZLayer[Any, Nothing, NameService] =
+    ZLayer.fromZIO(ZIO.succeed(new NameServiceImpl()))
+}
+						</code>
+					</pre>
+            </div>
+        </section>
+        <section>
+            <div class="code-block">
+					<pre>
+						<code class="scala">
+zioWithLogAge: ZIO[Logger with AgeService, Throwable, Int]
+
+LoggerObj.live: ZLayer[Any, Nothing, Logger]
+
+AgeObj.live: ZLayer[NameService, Nothing, AgeService]
+
+NameObj.live: ZLayer[Any, Nothing, NameService]
+						</code>
+					</pre>
+            </div>
+            <div class="code-block">
+					<pre>
+						<code class="scala">
+LoggerObj.live и AgeObj.live -> zioWithLogAge
+						</code>
+					</pre>
+            </div>
+        </section>
+        <section>
+            <p style="font-weight: bold">Операции со слоями</p>
+            <p style="text-align: left; font-size: x-large">Объединение</p>
+            <div class="code-block">
+					<pre>
+						<code class="scala">
+LoggerObj.live ++ AgeObj.live
+
+ZLayer[NameService, Nothing, LoggerObj.Logger with AgeObj.AgeService]
+						</code>
+					</pre>
+            </div>
+            <p style="text-align: left; font-size: x-large">Внедрение</p>
+            <div class="code-block">
+					<pre>
+						<code class="scala">
+NameObj.live >>> AgeObj.live
+
+ZLayer[Any, Nothing, AgeObj.AgeService]
+						</code>
+					</pre>
+            </div>
+        </section>
+        <section>
+            <p style="font-weight: bold">Операции со слоями</p>
+            <p style="text-align: left; font-size: x-large">Комбинация</p>
+            <div class="code-block">
+					<pre>
+						<code class="scala">
+NameObj.live >+> AgeObj.live  <=> NameObj.live ++ (NameObj.live >>> AgeObj.live)
+
+ZLayer[Any, Nothing, AgeObj.AgeService with NameObj.NameService]
+						</code>
+					</pre>
+            </div>
+        </section>
+        <section>
+            <p style="font-weight: bold">provideLayer</p>
+            <div class="code-block">
+					<pre>
+						<code class="scala">
+object Main extends ZIOAppDefault {
+  import Temps._
+
+  override def run: ZIO[ZIOAppArgs with Scope, Any, Any] = {
+
+  val layer = (NameObj.live >>> AgeObj.live) ++ LoggerObj.live
+  zioWithLogAge
+    .map(res => println(res))
+    .provideLayer(layer)
+  }
+}
+						</code>
+					</pre>
+            </div>
+        </section>
+        <section>
+            <p style="font-weight: bold">Документация</p>
+            <a href="https://zio.dev/overview/getting-started">https://zio.dev/overview/getting-started</a>
+            <p style="font-weight: bold">Литература</p>
+            <p>Zionomicon</p>
+        </section>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: false,
+            progress: true,
+            history: true,
+            center: true,
+            slideNumber: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [
+                {
+                    src: 'lib/js/classList.js', condition: function () {
+                        return !document.body.classList;
+                    }
+                },
+                {
+                    src: 'plugin/markdown/marked.js', condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'plugin/markdown/markdown.js', condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                        return !!document.querySelector('pre code');
+                    }, callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },
+                {src: 'plugin/zoom-js/zoom.js', async: true},
+                {src: 'plugin/notes/notes.js', async: true}
+            ]
+        });
+
+        window.addEventListener("mousedown", handleClick, false);
+        window.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        }, false);
+
+        function handleClick(e) {
+            e.preventDefault();
+            if (e.button === 0) Reveal.next();
+            if (e.button === 2) Reveal.prev();
+        }
+    </script>
+</div>
+</body>
+</html>
