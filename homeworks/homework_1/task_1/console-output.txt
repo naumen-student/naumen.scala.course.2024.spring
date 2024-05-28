@@ -1,0 +1,49 @@
+Microsoft Windows [Version 10.0.22621.3155]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\senio>scala
+Welcome to Scala 2.12.10 (OpenJDK 64-Bit Server VM, Java 11.0.22).
+Type in expressions for evaluation. Or try :help.
+
+scala> val a = "Hello Scala! This is Dmitry Gryaznov"
+a: String = Hello Scala! This is Dmitry Gryaznov
+
+scala> println(a)
+Hello Scala! This is Dmitry Gryaznov
+
+scala> a = "Hola Scala! This is Dmitry Gryaznov"
+<console>:12: error: reassignment to val
+       a = "Hola Scala! This is Dmitry Gryaznov"
+         ^
+
+scala> var b = "Hola Scala! This is Dmitry Gryaznov"
+b: String = Hola Scala! This is Dmitry Gryaznov
+
+scala> println(b)
+Hola Scala! This is Dmitry Gryaznov
+
+scala> b = "Gutten tag Scala! This is Dmitry Gryaznov"
+b: String = Gutten tag Scala! This is Dmitry Gryaznov
+
+scala> println(b)
+Gutten tag Scala! This is Dmitry Gryaznov
+
+scala> val c = "Hello Scala! This is " + "Dmitry Gryaznov".reverse
+c: String = Hello Scala! This is vonzayrG yrtimD
+
+scala> val revers_name = "Dmitry Gryaznov".reverse
+revers_name: String = vonzayrG yrtimD
+
+scala> val n1 = "Hello Scala! This is " + revers_name
+n1: String = Hello Scala! This is vonzayrG yrtimD
+
+scala> val n2 = "Hola Scala! This is " + revers_name
+n2: String = Hola Scala! This is vonzayrG yrtimD
+
+scala> val n3 = "Gutten tag Scala! This is " + revers_name
+n3: String = Gutten tag Scala! This is vonzayrG yrtimD
+
+scala> println(n1, n2, n3)
+(Hello Scala! This is vonzayrG yrtimD,Hola Scala! This is vonzayrG yrtimD,Gutten tag Scala! This is vonzayrG yrtimD)
+
+scala>
