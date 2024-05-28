@@ -1,0 +1,17 @@
+F:\Scala\naumen.scala.course.2024.spring\homeworks\homework_1\task_1>scala
+Welcome to Scala 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_121).
+Type in expressions for evaluation. Or try :help.
+
+scala> var a = "Hello Scala! This is Kirill Shipulin"
+a: String = Hello Scala! This is Kirill Shipulin
+
+scala> println(a)
+Hello Scala! This is Kirill Shipulin
+
+scala> a = "Hola Scala! This is lliriK nilupihS"
+a: String = Hola Scala! This is lliriK nilupihS
+
+scala> println(a)
+Hola Scala! This is lliriK nilupihS
+
+scala> :quit
