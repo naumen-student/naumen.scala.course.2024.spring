@@ -1,0 +1,107 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(early(addPluginSbtFile="""C:\Users\Пользователь\AppData\Local\Temp\idea.sbt"""), None, None)
+[debug] > Exec(addPluginSbtFile="""C:\Users\Пользователь\AppData\Local\Temp\idea.sbt""", None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.10.0 (Oracle Corporation Java 22.0.1)
+[debug] Load.defaultLoad until apply took 88.5699ms
+[debug]           Load.loadUnit: plugins took 69.3494ms
+[debug]           Load.loadUnit: defsScala took 0.2236ms
+[debug] [Loading] Scanning directory D:\Aaaaaa(RABOCHII STOL)\Учеба\3 КУРС\SCALA\homework_1\task_3\untitled\project
+[debug]             Load.loadUnit: mkEval took 11.8923ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in D:\Aaaaaa(RABOCHII STOL)\Учеба\3 КУРС\SCALA\homework_1\task_3\untitled\project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 10.6776 ms
+[info] loading settings for project untitled-build from idea.sbt ...
+[debug]               Load.resolveProject(untitled-build) took 26.6651ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id untitled-build, base: D:\Aaaaaa(RABOCHII STOL)\Учеба\3 КУРС\SCALA\homework_1\task_3\untitled\project, plugins: List(<none>))) took 43.3445ms
+[debug] [Loading] Done in D:\Aaaaaa(RABOCHII STOL)\Учеба\3 КУРС\SCALA\homework_1\task_3\untitled\project, returning: (untitled-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 1927.2352ms
+[debug]           Load.loadUnit: cleanEvalClasses took 6.6196ms
+[debug]         Load.loadUnit(file:/D:/Aaaaaa(RABOCHII%20STOL)/Учеба/3%20КУРС/SCALA/homework_1/task_3/untitled/project/, ...) took 2008.2038ms
+[debug]       Load.apply: load took 2088.6503ms
+[debug]       Load.apply: resolveProjects took 3.4388ms
+[debug]       Load.apply: finalTransforms took 56.5533ms
+[debug]       Load.apply: config.delegates took 4.5907ms
+[debug]       Load.apply: Def.make(settings)... took 224.7389ms
+[debug]       Load.apply: structureIndex took 63.6457ms
+[debug]       Load.apply: mkStreams took 0.9695ms
+[info] loading project definition from D:\Aaaaaa(RABOCHII STOL)\Учеба\3 КУРС\SCALA\homework_1\task_3\untitled\project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug]     Load.loadUnit: plugins took 3571.603ms
+[debug]     Load.loadUnit: defsScala took 0.0027ms
+[debug] [Loading] Scanning directory D:\Aaaaaa(RABOCHII STOL)\Учеба\3 КУРС\SCALA\homework_1\task_3\untitled
+[debug]       Load.loadUnit: mkEval took 0.2946ms
+[debug] [Loading] Found root project root w/ remaining 
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.StructurePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.IdeaShellPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.StructurePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.IdeaShellPlugin)))
+[debug] Clause(And(Set(Atom(sbt.plugins.CorePlugin), Atom(sbt.plugins.JvmPlugin))),Set(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.SemanticdbPlugin,org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin,sbt.plugins.JUnitXmlReportPlugin,org.jetbrains.sbt.IdeaShellPlugin,org.jetbrains.sbt.StructurePlugin,sbt.plugins.MiniDependencyTreePlugin)
+[debug] Plugins.deducer#function took 1.3171 ms
+[info] loading settings for project root from build.sbt ...
+[debug]         Load.resolveProject(root) took 19.0868ms
+[debug]       Load.loadTransitive: finalizeProject(Project(id root, base: D:\Aaaaaa(RABOCHII STOL)\Учеба\3 КУРС\SCALA\homework_1\task_3\untitled, plugins: List(<none>))) took 21.5146ms
+[debug] [Loading] Done in D:\Aaaaaa(RABOCHII STOL)\Учеба\3 КУРС\SCALA\homework_1\task_3\untitled, returning: (root)
+[debug]     Load.loadUnit: loadedProjectsRaw took 704.1779ms
+[debug]     Load.loadUnit: cleanEvalClasses took 18.7874ms
+[debug]   Load.loadUnit(file:/D:/Aaaaaa(RABOCHII%20STOL)/Учеба/3%20КУРС/SCALA/homework_1/task_3/untitled/, ...) took 4296.1626ms
+[debug] Load.apply: load took 4319.1526ms
+[debug] Load.apply: resolveProjects took 0.1013ms
+[debug] Load.apply: finalTransforms took 33.7198ms
+[debug] Load.apply: config.delegates took 0.584ms
+[debug] Load.apply: Def.make(settings)... took 64.5475ms
+[debug] Load.apply: structureIndex took 24.773ms
+[debug] Load.apply: mkStreams took 0.0025ms
+[info] set current project to untitled (in build file:/D:/Aaaaaa(RABOCHII%20STOL)/Учеба/3%20КУРС/SCALA/homework_1/task_3/untitled/)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(notifyUsersAboutShell, None, None)
+[debug] > Exec(iflast shell, None, None)
+[debug] > Exec(; set ideaPort in Global := 61977 ; idea-shell, None, None)
+[debug] > Exec(set ideaPort in Global := 61977, None, None)
+[info] Defining Global / ideaPort
+[info] The new value will be used by Compile / compile, Test / compile
+[debug] Defining 
+[debug] 	Global / ideaPort
+[debug] 
+[debug] The new value will be used by 
+[debug] 	Compile / compile
+[debug] 	Test / compile
+[info] Reapplying settings...
+[info] set current project to untitled (in build file:/D:/Aaaaaa(RABOCHII%20STOL)/Учеба/3%20КУРС/SCALA/homework_1/task_3/untitled/)
+[debug] > Exec(idea-shell, None, None)
