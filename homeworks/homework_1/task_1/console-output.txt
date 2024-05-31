@@ -1,0 +1,15 @@
+C:\Users\danil\.jdks\openjdk-19\bin\java.exe -Djline.terminal=NONE "-javaagent:D:\IntelliJ IDEA Educational Edition 2022.2\lib\idea_rt.jar=50185:D:\IntelliJ IDEA Educational Edition 2022.2\bin" -Dfile.encoding=UTF-8 -classpath "C:\Users\danil\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.13.12\scala-library-2.13.12.jar;C:\Users\danil\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-reflect\2.13.12\scala-reflect-2.13.12.jar;C:\Users\danil\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-compiler\2.13.12\scala-compiler-2.13.12.jar;D:\IntelliJ IDEA Educational Edition 2022.2\plugins\Scala\lib\runners.jar" scala.tools.nsc.MainGenericRunner -usejavacp -Xnojline
+Welcome to Scala 2.13.12 (OpenJDK 64-Bit Server VM, Java 19).
+Type in expressions for evaluation. Or try :help.
+
+scala> println("Hello Scala! This is Danil Samartsev")
+Hello Scala! This is Danil Samartsev
+
+scala> println("Hola Scala! This is Danil Samartsev")
+Hola Scala! This is Danil Samartsev
+
+scala> println("Geuten tag Scala! This is Danil Samartsev")
+Geuten tag Scala! This is Danil Samartsev
+
+scala> println("Hello Scala! This is vestramaS linaD")
+Hello Scala! This is vestramaS linaD
