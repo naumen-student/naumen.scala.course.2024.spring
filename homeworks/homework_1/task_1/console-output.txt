@@ -1,0 +1,60 @@
+C:\Users\Abessolo>scala
+Welcome to Scala 2.12.10 (OpenJDK 64-Bit Server VM, Java 11.0.23).
+Type in expressions for evaluation. Or try :help.
+
+scala> help
+<console>:12: error: not found: value help
+       help
+       ^
+
+scala> help.
+     |
+     |
+You typed two blank lines.  Starting a new command.
+
+scala> val a = "Hello Scala This is Gatsby ABessolo"
+a: String = Hello Scala This is Gatsby ABessolo
+
+scala> println(a)
+Hello Scala This is Gatsby ABessolo
+
+scala> val a = "Holla Scala This is Gatsby ABessolo"
+a: String = Holla Scala This is Gatsby ABessolo
+
+scala> println(a)
+Holla Scala This is Gatsby ABessolo
+
+scala> val a = "Gutent tag Scala This is Gatsby ABessolo"
+a: String = Gutent tag Scala This is Gatsby ABessolo
+
+scala> println(a)
+Gutent tag Scala This is Gatsby ABessolo
+
+scala> val a = "Bonjour Scala This is Gatsby ABessolo"
+a: String = Bonjour Scala This is Gatsby ABessolo
+
+scala> val a = "Bonjour Scala This is ybstag olosseba"
+a: String = Bonjour Scala This is ybstag olosseba
+
+scala> println(a)
+Bonjour Scala This is ybstag olosseba
+
+scala> val a = "Hello Scala This is ybstag olosseba"
+a: String = Hello Scala This is ybstag olosseba
+
+scala> println(a)
+Hello Scala This is ybstag olosseba
+
+scala> val a = "Holla Scala This is ybstag olosseba"
+a: String = Holla Scala This is ybstag olosseba
+
+scala> println(a)
+Holla Scala This is ybstag olosseba
+
+scala> val a = "Gutten Tag Scala This is ybstag olosseba"
+a: String = Gutten Tag Scala This is ybstag olosseba
+
+scala> println(a)
+Gutten Tag Scala This is ybstag olosseba
+
+scala>
