@@ -1,0 +1,22 @@
+scala> var greet: String = "Heyo"
+greet: String = Heyo
+                          ^
+scala> var name: String = "Willhelm"
+name: String = Willhelm
+
+scala> lazy val printMessage = (greet: String, name: String) => s"$greet Scala! This is $name"
+printMessage: (String, String) => String = <lazy>
+
+scala> printMessage(greet, name)
+res0: String = Heyo Scala! This is Willhelm
+
+scala> printMessage(greet, name.reverse)
+res1: String = Heyo Scala! This is mlehlliW
+                                                                             ^
+scala> lazy val printMessage = (greet: String, name: String) => println(s"$greet Scala! This is $name")
+printMessage: (String, String) => Unit = <lazy>
+
+scala> printMessage(greet, name.reverse)
+Heyo Scala! This is mlehlliW
+
+scala>
