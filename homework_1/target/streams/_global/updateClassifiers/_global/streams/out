@@ -1,3 +1,4 @@
-[debug] not up to date. inChanged = true, force = false
-[debug] Updating ProjectRef(uri("file:/home/grish-grdv/IdeaProjects/naumen/homework_1/"), "root")...
-[debug] Done updating ProjectRef(uri("file:/home/grish-grdv/IdeaProjects/naumen/homework_1/"), "root")
+[warn] scala-library-2.13.13-sources.jar no longer exists at \home\grish-grdv\.cache\coursier\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.13.13\scala-library-2.13.13-sources.jar
+[debug] not up to date. inChanged = false, force = false
+[debug] Updating ProjectRef(uri("file:/C:/Users/Grisha%20Grodov/IdeaProjects/naumen.scala.course.2024.spring/homework_1/"), "root")...
+[debug] Done updating ProjectRef(uri("file:/C:/Users/Grisha%20Grodov/IdeaProjects/naumen.scala.course.2024.spring/homework_1/"), "root")
