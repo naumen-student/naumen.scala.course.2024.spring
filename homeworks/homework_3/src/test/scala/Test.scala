@@ -1,7 +1,6 @@
 import utest._
 
 object Test extends TestSuite {
-
     val tests = Tests {
         'test_createTable - {
             val table = new Table(3, 3)
