@@ -1,4 +1,8 @@
 
+
+import scala.annotation.tailrec
+import scala.util.Random
+
 object Exercises {
 
     /**
@@ -23,7 +27,16 @@ object Exercises {
     }
 
     def findSumFunctional(items: List[Int], sumValue: Int) = {
-        (-1, -1)
+        items.zipWithIndex
+          .map(x => (x, sumValue - x._1))
+          .map(x => (x._1._2, items.indexWhere(z => z == x._2)))
+          .filter(x => x._2 != -1 && x._1 != x._2)
+          .sortBy(x => x._2)
+          .union(List((-1,-1))) //bound must be positive, argument exception
+          .head;
+    }
+    def findSumFunctional2(items: List[Int], sumValue: Int) = {
+        items; //переделать с tails???
     }
 
 
@@ -47,9 +60,15 @@ object Exercises {
             case _ => 1
         }
     }
-
-    def tailRecRecursion(items: List[Int]): Int = {
-        1
+    @tailrec
+    def tailRecRecursion(items: List[Int], index: Int = 1, mult: Int = 1): Int = {
+        if (index > items.size)
+            return mult
+        if (items(items.size - index) % 2 == 0) {
+            tailRecRecursion(items, index + 1, mult * items(items.size - index) + (items.size - index + 1))
+        } else {
+            tailRecRecursion(items, index + 1, mult * -1 * items(items.size - index) + (items.size - index + 1))
+        }
     }
 
     /**
@@ -59,8 +78,28 @@ object Exercises {
      * Если ответ найден, то возвращается Some(index), если нет, то None
      */
 
+    final case class ListData(value: Int, index: Int) {
+        require(index >= 0)
+    }
     def functionalBinarySearch(items: List[Int], value: Int): Option[Int] = {
-        None
+        val itemsData = items.zipWithIndex.map(item => ListData(item._1, item._2))
+        functionalBinarySearchHelper(itemsData, value)
+    }
+
+    @tailrec
+    private def functionalBinarySearchHelper(items: List[ListData], value: Int): Option[Int] = {
+        if (items.isEmpty)
+            return None
+        val mid = items.size / 2;
+        if (items(mid).value < value) {
+            functionalBinarySearchHelper(items.slice(mid, items.size), value)
+        }
+        else if (items(mid).value > value) {
+            functionalBinarySearchHelper(items.slice(0, mid), value)
+        }
+        else {
+            Some(items(mid).index)
+        }
     }
 
     /**
@@ -73,7 +112,16 @@ object Exercises {
 
     def generateNames(namesСount: Int): List[String] = {
         if (namesСount < 0) throw new Throwable("Invalid namesCount")
-        Nil
+        (1 to namesСount).toList.map(_ => this.generateName())
+    }
+
+    private def generateName(): String = {
+        Iterator.continually(Random.nextPrintableChar())
+          .take(25)
+          .filter(_.isLetter)
+          .mkString
+          .toLowerCase
+          .capitalize
     }
 
 }
@@ -111,14 +159,39 @@ object SideEffectExercise {
 
 
     class PhoneServiceSafety(unsafePhoneService: SimplePhoneService) {
-        def findPhoneNumberSafe(num: String) = ???
+        def findPhoneNumberSafe(num: String): Either[Unit,String] = {
+            val phone = unsafePhoneService.findPhoneNumber(num);
+            phone match {
+                case null => Left();
+                case _ => Right(phone);
+            }
+        }
 
-        def addPhoneToBaseSafe(phone: String) = ???
+        def addPhoneToBaseSafe(phone: String): Either[String, Unit] = {
+            try {
+                unsafePhoneService.addPhoneToBase(phone);
+                Right()
+            } catch {
+                case ex: InternalError => Left(ex.getMessage)
+            }
+        }
 
-        def deletePhone(phone: String) = ???
+        def deletePhone(phone: String): Unit = {
+            unsafePhoneService.deletePhone(phone)
+        }
     }
 
     class ChangePhoneServiceSafe(phoneServiceSafety: PhoneServiceSafety) extends ChangePhoneService {
-        override def changePhone(oldPhone: String, newPhone: String): String = ???
+        override def changePhone(oldPhone: String, newPhone: String): String = {
+            val oldPhoneRecord = phoneServiceSafety.findPhoneNumberSafe(oldPhone)
+            if (oldPhoneRecord.isRight) {
+                phoneServiceSafety.deletePhone(oldPhoneRecord.right.get)
+            }
+            val addResult = phoneServiceSafety.addPhoneToBaseSafe(newPhone)
+            if (addResult.isRight)
+                "ok"
+            else
+                addResult.left.get
+        }
     }
 }

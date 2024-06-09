@@ -1,5 +1,8 @@
+import Utils.{PhoneBase, SimplePhoneService}
+import SideEffectExercise._
 import utest._
 
+import scala.collection.mutable.ListBuffer
 import scala.util.Random
 
 object Test extends TestSuite {
@@ -21,6 +24,10 @@ object Test extends TestSuite {
                     val testList = generateRandomList(50)
                     assert(Exercises.simpleRecursion(testList) == Exercises.tailRecRecursion(testList))
                 }
+            }
+            'simpleTest - {
+                val testList = List(1, 2, 3, 4, 5, 10)
+                assert(Exercises.simpleRecursion(testList) == Exercises.tailRecRecursion(testList))
             }
             'longList - {
                 val testList = List.fill(10000)(Random.nextInt)
@@ -59,6 +66,17 @@ object Test extends TestSuite {
             'empty - {
                 assert(Exercises.generateNames(0).isEmpty)
             }
+        }
+        'phoneTaskWorks - {
+            val newPhone = "+79846593897"
+            val phones = new PhoneBase(ListBuffer("+79999999999", "+78088088088", "+76066066066", "+79814765365"))
+            val unsafeService = new SimplePhoneService(phones)
+            val safeService = new PhoneServiceSafety(unsafeService)
+            val changeService = new ChangePhoneServiceSafe(safeService)
+            assert(changeService.changePhone("+78088088088", newPhone) == "ok")
+            //assert(safeService.findPhoneNumberSafe("+78088088088").isLeft) не работает, потому что метод delete в PhoneBase не удаляет номер из списка
+            assert(safeService.findPhoneNumberSafe(newPhone).isRight)
+
         }
     }
 }
