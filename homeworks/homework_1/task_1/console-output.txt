@@ -1,0 +1,44 @@
+"C:\Program Files\Eclipse Adoptium\jdk-21.0.2.13-hotspot\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.3\lib\idea_rt.jar=52440:C:\Program Files\JetBrains\IntelliJ IDEA 2023.3\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\Sergey\IdeaProjects\scala-first-project\target\scala-2.13\classes;C:\Users\Sergey\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.13.13\scala-library-2.13.13.jar;C:\Users\Sergey\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\io\github\java-diff-utils\java-diff-utils\4.12\java-diff-utils-4.12.jar;C:\Users\Sergey\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\net\java\dev\jna\jna\5.13.0\jna-5.13.0.jar;C:\Users\Sergey\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\jline\jline\3.24.1\jline-3.24.1.jar;C:\Users\Sergey\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-compiler\2.13.13\scala-compiler-2.13.13.jar;C:\Users\Sergey\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-reflect\2.13.13\scala-reflect-2.13.13.jar;C:\Users\Sergey\AppData\Roaming\JetBrains\IntelliJIdea2023.3\plugins\Scala\lib\runners.jar scala.tools.nsc.MainGenericRunner -usejavacp -Xjline:off
+Welcome to Scala 2.13.13 (OpenJDK 64-Bit Server VM, Java 21.0.2).
+Type in expressions for evaluation. Or try :help.
+
+scala> val text = "Hello Scala! This is Sergey"
+val text: String = Hello Scala! This is Sergey
+
+scala> print(text)
+Hello Scala! This is Sergey
+scala> println(text)
+Hello Scala! This is Sergey
+
+scala> val holaText : String = text.replaceFirst("Hello", "Hola")
+val holaText: String = Hola Scala! This is Sergey
+
+scala> println(holaText)
+Hola Scala! This is Sergey
+
+scala> val germanText = text.replaceFirst("Hello", "Guten Tag");
+val germanText: String = Guten Tag Scala! This is Sergey
+
+scala> println(germanText)
+Guten Tag Scala! This is Sergey
+
+scala> holaText = 1
+                ^
+       error: reassignment to val
+
+scala> var mutableText = "a"
+var mutableText: String = a
+
+scala> mutableText = "ba"
+// mutated mutableText
+
+scala> println(mutableText)
+ba
+
+scala> mutableText = 1
+                     ^
+       error: type mismatch;
+        found   : Int(1)
+        required: String
+
+scala>
