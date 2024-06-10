@@ -1,0 +1,36 @@
+C:\Users\Olga>scala
+Welcome to Scala 3.4.0 (1.8.0_333, Java Java HotSpot(TM) 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> val helloWorld="Hello Scala! This is Olga Trofimova"
+val helloWorld: String = Hello Scala! This is Olga Trofimova
+
+scala> println(helloWorld)
+Hello Scala! This is Olga Trofimova
+
+scala> var hola="Hola Scala! This is Olga Trofimova"
+var hola: String = Hola Scala! This is Olga Trofimova
+
+scala> println(hola)
+Hola Scala! This is Olga Trofimova
+
+scala> hola="Guten tag".concat(hola.substring(4))
+hola: String = Guten tag Scala! This is Olga Trofimova
+
+scala> println(hola)
+Guten tag Scala! This is Olga Trofimova
+
+scala> var words=hola.split(' ')
+var words: Array[String] = Array(Guten, tag, Scala!, This, is, Olga, Trofimova)
+
+scala> words(5)=words(5).reverse
+
+scala> words(6)=words(6).reverse
+
+scala> var reversedHello=words.mkString(" ")
+var reversedHello: String = Guten tag Scala! This is aglO avomiforT
+
+scala> println(reversedHello)
+Guten tag Scala! This is aglO avomiforT
+
+scala>
