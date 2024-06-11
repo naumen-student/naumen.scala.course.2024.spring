@@ -128,13 +128,9 @@ object SideEffectExercise {
     import Utils._
 
     class SimpleChangePhoneService(phoneService: SimplePhoneService) extends ChangePhoneService {
-
         override def changePhone(oldPhone: String, newPhone: String): String = {
-
             val oldPhoneRecord = phoneService.findPhoneNumber(oldPhone)
-
             if (oldPhoneRecord != null) {
-
                 phoneService.deletePhone(oldPhoneRecord)
             }
             phoneService.addPhoneToBase(newPhone)
@@ -143,9 +139,7 @@ object SideEffectExercise {
     }
 
     class PhoneServiceSafety(unsafePhoneService: SimplePhoneService) {
-
         def findPhoneNumberSafe(num: String): Option[String] = Option(unsafePhoneService.findPhoneNumber(num))
-
         def addPhoneToBaseSafe(phone: String): Either[String, Unit] = {
             Try(unsafePhoneService.addPhoneToBase(phone)) match {
                 case Success(ok) => Right(ok)
