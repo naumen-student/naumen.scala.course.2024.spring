@@ -1,3 +1,4 @@
+import scala.annotation.tailrec
 
 object Exercises {
 
@@ -13,7 +14,9 @@ object Exercises {
     def findSumImperative(items: List[Int], sumValue: Int): (Int, Int) = {
         var result: (Int, Int) = (-1, -1)
         for (i <- 0 until items.length) {
+
             for (j <- 0 until items.length) {
+
                 if (items(i) + items(j) == sumValue && i != j) {
                     result = (i, j)
                 }
@@ -22,15 +25,12 @@ object Exercises {
         result
     }
 
-    def findSumFunctional(items: List[Int], sumValue: Int): (Int, Int) = {
-        def findPair(index1: Int, index2: Int): (Int, Int) = {
-            if (index1 >= items.length - 1 || index2 >= items.length) (-1, -1)
-            else if (items(index1) + items(index2) == sumValue) (index1, index2)
-            else if (index2 + 1 < items.length) findPair(index1, index2 + 1)
-            else findPair(index1 + 1, index1 + 2)
-        }
-
-        findPair(0, 1)
+    def findSumFunctional(items: List[Int], sumValue: Int) = {
+        items.zipWithIndex
+          .combinations(2)
+          .find { case List((_, idx1), (_, idx2)) => items(idx1) + items(idx2) == sumValue }
+          .map { case List((_, idx1), (_, idx2)) => (idx1, idx2).swap }
+          .getOrElse((-1, -1))
     }
 
 
@@ -56,14 +56,20 @@ object Exercises {
     }
 
     def tailRecRecursion(items: List[Int]): Int = {
-        def tailRecHelper(items: List[Int], index: Int, acc: Int): Int = items match {
-            case Nil => acc
-            case head :: tail =>
-                val result = if (head % 2 == 0) head * acc + index else -1 * head * acc + index
-                tailRecHelper(tail, index + 1, result)
+        @tailrec
+        def rec(items: List[Int], index: Int = 1, sum: Int = 1): Int = {
+            items match {
+                case head :: tail =>
+                    if (head % 2 == 0) {
+                        rec(tail, index - 1, index + (head * sum))
+                    } else {
+                        rec(tail, index - 1, index - (head * sum))
+                    }
+                case _ => sum
+            }
         }
 
-        tailRecHelper(items, 1, 1)
+        rec(items.reverse, items.length)
     }
 
     /**
@@ -112,6 +118,7 @@ object Exercises {
     }
 
 }
+
 
 /**
  * Задание №5
