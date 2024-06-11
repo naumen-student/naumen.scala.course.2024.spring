@@ -1,13 +1,6 @@
 Microsoft Windows [Version 10.0.19045.4412]
 (c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
 
-C:\Users\timur>scala repl
-No such file or class on classpath: repl
-
-C:\Users\timur>repl
-"repl" не является внутренней или внешней
-командой, исполняемой программой или пакетным файлом.
-
 C:\Users\timur>scala
 Welcome to Scala 2.12.10 (OpenJDK 64-Bit Server VM, Java 11.0.22).
 Type in expressions for evaluation. Or try :help.
