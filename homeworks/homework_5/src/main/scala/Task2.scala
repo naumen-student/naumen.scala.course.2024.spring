@@ -20,10 +20,15 @@ object Task2 extends App {
 
   case class DegreeAngle(angle: Double)
   object DegreeAngle {
+    private def normalizeAngle(angle: Double): Double = {
+      val normalized = angle % 360
+      if (normalized < 0) normalized + 360 else normalized
+    }
+
     implicit val monoid: Monoid[DegreeAngle] = new Monoid[DegreeAngle] {
       def empty: DegreeAngle = DegreeAngle(0)
       def combine(a: DegreeAngle, b: DegreeAngle): DegreeAngle =
-        DegreeAngle((a.angle + b.angle) % 360)
+        DegreeAngle(normalizeAngle(a.angle + b.angle))
     }
   }
 
