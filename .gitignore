@@ -1,3 +1,6 @@
 .idea
 cache
 sbt.json
+unmanaged
+runtime
+target
