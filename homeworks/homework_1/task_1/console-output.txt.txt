@@ -1,0 +1,48 @@
+Microsoft Windows [Version 10.0.19045.4412]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\timur>scala repl
+No such file or class on classpath: repl
+
+C:\Users\timur>repl
+"repl" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+C:\Users\timur>scala
+Welcome to Scala 2.12.10 (OpenJDK 64-Bit Server VM, Java 11.0.22).
+Type in expressions for evaluation. Or try :help.
+
+scala> val a = "Hello Scala! This is Timur Zhakeev"
+a: String = Hello Scala! This is Timur Zhakeev
+
+scala> println(a)
+Hello Scala! This is Timur Zhakeev
+
+scala> val b = "Heyo"
+b: String = Heyo
+
+scala> val c = "Guten tag"
+c: String = Guten tag
+
+scala> println(b)
+Heyo
+
+scala> println(c)
+Guten tag
+
+scala> var hi: String = "hi"
+hi: String = hi
+
+scala> lazy val printMessage = (name: String, surname: String) => println(s"Hi Scala! This is $name $surname")
+printMessage: (String, String) => Unit = <lazy>
+
+scala> val name = "Timur"
+name: String = Timur
+
+scala> val surname = "Zhakeev"
+surname: String = Zhakeev
+
+scala> printMessage(name.reverse, surname)
+Hi Scala! This is rumiT Zhakeev
+
+scala>
