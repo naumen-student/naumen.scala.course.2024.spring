@@ -23,10 +23,12 @@ object Exercises {
     }
 
     def findSumFunctional(items: List[Int], sumValue: Int) = {
-        (-1, -1)
+        items.indices.flatMap { itemIter1 =>
+            items.indices.filter { itemIter2 =>
+                items(itemIter1) + items(itemIter2) == sumValue && itemIter1 != itemIter2
+            }.map(j => (itemIter1, j))
+        }.lastOption.getOrElse((-1, -1));
     }
-
-
     /**
      * Задание №2
      *
@@ -49,7 +51,21 @@ object Exercises {
     }
 
     def tailRecRecursion(items: List[Int]): Int = {
-        1
+        @tailrec
+        def rec(items: List[Int], index: Int = 1, sum: Int): Int = {
+            items match {
+                case head :: tail =>
+                    if (head % 2 == 0) {
+                        rec(tail, index - 1, index + (head * sum))
+                    } else {
+                        rec(tail, index - 1, index - (head * sum))
+                    }
+                case _ => sum
+            }
+        }
+
+        rec(items.reverse, items.length, 1)
+    }
     }
 
     /**
@@ -60,7 +76,21 @@ object Exercises {
      */
 
     def functionalBinarySearch(items: List[Int], value: Int): Option[Int] = {
-        None
+        @tailrec
+        def binarySearch(l: Int, r: Int): Option[Int] = {
+            Some((l + r) / 2).filter(_ => l <= r) match {
+                case None => None
+                case Some(m) =>
+                    if (items(m) == value)
+                        Some(m)
+                    else if (items(m) < value)
+                        binarySearch(m + 1, r)
+                    else
+                        binarySearch(l, m - 1)
+            }
+        }
+
+        binarySearch(0, items.length - 1)
     }
 
     /**
@@ -73,10 +103,20 @@ object Exercises {
 
     def generateNames(namesСount: Int): List[String] = {
         if (namesСount < 0) throw new Throwable("Invalid namesCount")
-        Nil
+        def generateNames(count: Int): List[String] = {
+            if (count < 0)
+                throw new Throwable("Invalid namesCount")
+            else
+                List.tabulate(count) { _ =>
+                    Random.alphanumeric.filter(_.isLetter).
+                      take(4 + Random.nextInt(15)).
+                      mkString.
+                      toLowerCase.capitalize
+                }
+        }
     }
 
-}
+
 
 /**
  * Задание №5
@@ -111,14 +151,27 @@ object SideEffectExercise {
 
 
     class PhoneServiceSafety(unsafePhoneService: SimplePhoneService) {
-        def findPhoneNumberSafe(num: String) = ???
+        def findPhoneNumberSafe(num: String): Option[String] = {
+            Option(unsafePhoneService.findPhoneNumber(num))
+        }
 
-        def addPhoneToBaseSafe(phone: String) = ???
-
-        def deletePhone(phone: String) = ???
+        def addPhoneToBaseSafe(phone: String): Either[String, Unit] = {
+            Try(unsafePhoneService.addPhoneToBase(phone)) match {
+                case Success(ok) => Right(ok)
+                case Failure(exception) => Left(exception.getMessage)
+            }
+        }
+        def deletePhone(phone: String): Option[Unit] = {
+            Option(findPhoneNumberSafe(phone).map(unsafePhoneService.deletePhone))
+        }
     }
 
     class ChangePhoneServiceSafe(phoneServiceSafety: PhoneServiceSafety) extends ChangePhoneService {
-        override def changePhone(oldPhone: String, newPhone: String): String = ???
+        override def changePhone(oldPhone: String, newPhone: String): String = {
+            phoneServiceSafety.findPhoneNumberSafe(oldPhone).foreach(phoneServiceSafety.deletePhone)
+            phoneServiceSafety.addPhoneToBaseSafe(newPhone) match {
+                case Right(_) => "ok"
+                case Left(message) => message
+            }
+        }
     }
-}
