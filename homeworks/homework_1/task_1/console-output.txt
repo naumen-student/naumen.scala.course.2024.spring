@@ -1,0 +1,18 @@
+
+scala> println("Hello Scala! This is AlexGavrilov")
+Hello Scala! This is AlexGavrilov
+
+scala> println("Hola Scala! This is AlexGavrilov")
+Hola Scala! This is AlexGavrilov
+
+scala> println("Guten Tag Scala! This is AlexGavrilov")
+Guten Tag Scala! This is AlexGavrilov
+
+scala> println("Hello Scala! This is " + "Arseniy".reverse)
+Hello Scala! This is volirvaGxelA
+
+scala> println("Hola Scala! This is " + "Arseniy".reverse)
+Hola Scala! This is volirvaGxelA
+
+scala> println("Guten Tag Scala! This is " + "Arseniy".reverse)
+Guten Tag Scala! This is volirvaGxelA
