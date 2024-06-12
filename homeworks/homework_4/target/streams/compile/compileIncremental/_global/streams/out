@@ -1,0 +1,38 @@
+[debug] [zinc] IncrementalCompile -----------
+[debug] IncrementalCompile.incrementalCompile
+[debug] previous = Stamps for: 13 products, 2 sources, 1 libraries
+[debug] current source = Set(${BASE}/src/main/scala/Exercises.scala, ${BASE}/src/main/scala/Utils.scala)
+[debug] > initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(${BASE}/src/main/scala/Exercises.scala), unmodified = ...),Set(),Set(),API Changes: Set())
+[debug] 
+[debug] Initial source changes:
+[debug] 	removed: Set()
+[debug] 	added: Set()
+[debug] 	modified: Set(${BASE}/src/main/scala/Exercises.scala)
+[debug] Invalidated products: Set()
+[debug] External API changes: API Changes: Set()
+[debug] Modified binary dependencies: Set()
+[debug] Initial directly invalidated classes: Set(SideEffectExercise.ChangePhoneServiceSafe, SideEffectExercise.PhoneServiceSafety, SideEffectExercise.SimpleChangePhoneService, Exercises, SideEffectExercise)
+[debug] Sources indirectly invalidated by:
+[debug] 	product: Set()
+[debug] 	binary dep: Set()
+[debug] 	external source: Set()
+[debug] All initially invalidated classes: Set(SideEffectExercise.ChangePhoneServiceSafe, SideEffectExercise.PhoneServiceSafety, SideEffectExercise.SimpleChangePhoneService, Exercises, SideEffectExercise)
+[debug] All initially invalidated sources:Set(${BASE}/src/main/scala/Exercises.scala)
+[debug] Initial set of included nodes: SideEffectExercise.ChangePhoneServiceSafe, SideEffectExercise.PhoneServiceSafety, SideEffectExercise.SimpleChangePhoneService, Exercises, SideEffectExercise
+[debug] compilation cycle 1
+[info] compiling 1 Scala source to C:\Users\Kiril\Desktop\naumen.scala.course.2024.spring-master\homeworks\homework_4\target\scala-2.12\classes ...
+[debug] Getting org.scala-sbt:compiler-bridge_2.12:1.9.5:compile for Scala 2.12.10
+[debug] [zinc] Running cached compiler 46e3e841 for Scala compiler version 2.12.10
+[debug] [zinc] The Scala compiler is invoked with:
+[debug] 	-bootclasspath
+[debug] 	C:\Users\Kiril\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.12.10\scala-library-2.12.10.jar
+[debug] 	-classpath
+[debug] 	C:\Users\Kiril\Desktop\naumen.scala.course.2024.spring-master\homeworks\homework_4\target\scala-2.12\classes
+[debug] New invalidations:
+[debug] Initial set of included nodes: 
+[debug] Previously invalidated, but (transitively) depend on new invalidations:
+[debug] Final step, transitive dependencies:
+[debug] 	Set()
+[debug] No classes were invalidated.
+[debug] Scala compilation took 0.1310241 s
+[info] done compiling

@@ -1,0 +1,49 @@
+[debug] [zinc] IncrementalCompile -----------
+[debug] IncrementalCompile.incrementalCompile
+[debug] previous = Stamps for: 2 products, 1 sources, 2 libraries
+[debug] current source = Set(${BASE}/src/test/scala/Test.scala)
+[debug] > initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(), unmodified = ...),Set(),Set(),API Changes: Set(NamesChange(NumberCell,ModifiedNames(changes = UsedName(NumberCell;init;,[Default]))), NamesChange(Table,ModifiedNames(changes = UsedName(cells,[Default])))))
+[debug] The NumberCell has the following regular definitions changed:
+[debug] 	UsedName(NumberCell;init;,[Default]).
+[debug] All member reference dependencies will be considered within this context.
+[debug] Files invalidated by inheriting from (external) NumberCell: Set()
+[debug] Now invalidating by inheritance (internally).
+[debug] Getting direct dependencies of all classes transitively invalidated by inheritance.
+[debug] Getting classes that directly depend on (external) NumberCell.
+[debug] The following modified names cause invalidation of Test: [NumberCell;init;]
+[debug] The Table has the following regular definitions changed:
+[debug] 	UsedName(cells,[Default]).
+[debug] All member reference dependencies will be considered within this context.
+[debug] Files invalidated by inheriting from (external) Table: Set()
+[debug] Now invalidating by inheritance (internally).
+[debug] Getting direct dependencies of all classes transitively invalidated by inheritance.
+[debug] Getting classes that directly depend on (external) Table.
+[debug] None of the modified names appears in source file of Test. This dependency is not being considered for invalidation.
+[debug] 
+[debug] Initial source changes:
+[debug] 	removed: Set()
+[debug] 	added: Set()
+[debug] 	modified: Set()
+[debug] Invalidated products: Set()
+[debug] External API changes: API Changes: Set(NamesChange(NumberCell,ModifiedNames(changes = UsedName(NumberCell;init;,[Default]))), NamesChange(Table,ModifiedNames(changes = UsedName(cells,[Default]))))
+[debug] Modified binary dependencies: Set()
+[debug] Initial directly invalidated classes: Set()
+[debug] Sources indirectly invalidated by:
+[debug] 	product: Set()
+[debug] 	binary dep: Set()
+[debug] 	external source: Set(Test)
+[debug] All initially invalidated classes: Set(Test)
+[debug] All initially invalidated sources:Set()
+[debug] Initial set of included nodes: Test
+[debug] Recompiling all sources: number of invalidated sources > 50.0 percent of all sources
+[debug] compilation cycle 1
+[info] compiling 1 Scala source to C:\Users\Kiril\Desktop\naumen.scala.course.2024.spring-master\homeworks\homework_3\target\scala-2.12\test-classes ...
+[debug] Getting org.scala-sbt:compiler-bridge_2.12:1.9.5:compile for Scala 2.12.10
+[debug] [zinc] Running cached compiler 2b352b39 for Scala compiler version 2.12.10
+[debug] [zinc] The Scala compiler is invoked with:
+[debug] 	-bootclasspath
+[debug] 	C:\Users\Kiril\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.12.10\scala-library-2.12.10.jar
+[debug] 	-classpath
+[debug] 	C:\Users\Kiril\Desktop\naumen.scala.course.2024.spring-master\homeworks\homework_3\target\scala-2.12\test-classes;C:\Users\Kiril\Desktop\naumen.scala.course.2024.spring-master\homeworks\homework_3\target\scala-2.12\classes;C:\Users\Kiril\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\com\lihaoyi\utest_2.12\0.5.3\utest_2.12-0.5.3.jar;C:\Users\Kiril\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-reflect\2.12.10\scala-reflect-2.12.10.jar;C:\Users\Kiril\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-sbt\test-interface\1.0\test-interface-1.0.jar
+[debug] Scala compilation took 0.8184478 s
+[info] done compiling

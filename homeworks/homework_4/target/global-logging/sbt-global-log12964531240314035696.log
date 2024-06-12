@@ -1,0 +1,9 @@
+[debug] > Exec(test, None, None)
+[debug] Evaluating tasks: Test / test
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] 
+[error] Failed tests:
+[error] 	Test
+[error] (Test / test) sbt.TestsFailedException: Tests unsuccessful
+[error] Total time: 0 s, completed 12 июн. 2024 г., 04:34:11
+[debug] > Exec(idea-shell, None, None)

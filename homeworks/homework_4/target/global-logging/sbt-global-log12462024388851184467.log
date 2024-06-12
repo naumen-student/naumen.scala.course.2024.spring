@@ -1,0 +1,11 @@
+[debug] > Exec(test, None, None)
+[debug] Evaluating tasks: Test / test
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 1 Scala source to C:\Users\Kiril\Desktop\naumen.scala.course.2024.spring-master\homeworks\homework_4\target\scala-2.12\classes ...
+[info] done compiling
+[info] 
+[error] Failed tests:
+[error] 	Test
+[error] (Test / test) sbt.TestsFailedException: Tests unsuccessful
+[error] Total time: 0 s, completed 12 июн. 2024 г., 04:20:52
+[debug] > Exec(idea-shell, None, None)

@@ -1,0 +1,29 @@
+[debug] Created transactional ClassFileManager with tempDir = C:\Users\Kiril\Desktop\naumen.scala.course.2024.spring-master\homeworks\homework_4\target\scala-2.12\classes.bak
+[debug] About to delete class files:
+[debug] 	Exercises$$anonfun$$nestedInanonfun$findSumFunctional$1$1.class
+[debug] 	SideEffectExercise$.class
+[debug] 	SideEffectExercise$SimpleChangePhoneService.class
+[debug] 	SideEffectExercise$PhoneServiceSafety.class
+[debug] 	SideEffectExercise$ChangePhoneServiceSafe.class
+[debug] 	Exercises$.class
+[debug] 	Exercises.class
+[debug] 	SideEffectExercise.class
+[debug] We backup class files:
+[debug] 	Exercises$$anonfun$$nestedInanonfun$findSumFunctional$1$1.class
+[debug] 	SideEffectExercise$.class
+[debug] 	SideEffectExercise$SimpleChangePhoneService.class
+[debug] 	SideEffectExercise$PhoneServiceSafety.class
+[debug] 	SideEffectExercise$ChangePhoneServiceSafe.class
+[debug] 	Exercises$.class
+[debug] 	Exercises.class
+[debug] 	SideEffectExercise.class
+[debug] Registering generated classes:
+[debug] 	Exercises$$anonfun$$nestedInanonfun$findSumFunctional$1$1.class
+[debug] 	SideEffectExercise$.class
+[debug] 	SideEffectExercise$SimpleChangePhoneService.class
+[debug] 	SideEffectExercise$PhoneServiceSafety.class
+[debug] 	SideEffectExercise$ChangePhoneServiceSafe.class
+[debug] 	Exercises$.class
+[debug] 	Exercises.class
+[debug] 	SideEffectExercise.class
+[debug] Removing the temporary directory used for backing up class files: C:\Users\Kiril\Desktop\naumen.scala.course.2024.spring-master\homeworks\homework_4\target\scala-2.12\classes.bak
