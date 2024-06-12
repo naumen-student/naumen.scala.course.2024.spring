@@ -16,7 +16,12 @@ object Exercises {
     /*Реализовать функцию, которая возвращает сумму всех целых чисел в заданном диапазоне (от iForm до iTo), которые делятся
     на 3 или на 5.*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
-    def sumOfDivBy3Or5(iFrom: Int, iTo: Int): Long = ???
+    def sumOfDivBy3Or5(iFrom: Int, iTo: Int): Long = {
+        if (iFrom > iTo) return 0
+        val preSum = sumOfDivBy3Or5(iFrom + 1, iTo)
+        if (iFrom % 3 == 0 || iFrom % 5 == 0) return iFrom + preSum
+        preSum
+    }
 
 
 
@@ -25,30 +30,49 @@ object Exercises {
     Число 80 раскладывается на множители 1 * 2 * 2 * 2 * 2 * 5, результат выполнения функции => Seq(2, 5).
     Число 98 можно разложить на множители 1 * 2 * 7 * 7, результат выполнения функции => Seq(2, 7).*/
     /*Реализовать юнит-тесты в src/test/scala для данной функции.*/
-    def primeFactor(number: Int): Seq[Int] = ???
+    def primeFactor(number: Int): Seq[Int] = {
+        var i = 2
+        var num = number
+        val div = scala.collection.mutable.ArrayBuffer.empty[Int]
+        while (i * i < num) {
+            if (num % i == 0) div += i
+            while (num % i == 0) {
+                num = (num / i).toInt
+            }
+            i += 1
+        }
+        if (num != 1) div += num
+        div.toSeq
+    }
 
 
 
     /*ЗАДАНИЕ III*/
     /*Дано: класс двумерного вектора, а также функции вычисления модуля вектора (abs), вычисления скалярного произведения
     векторов (scalar) и косинуса угла между векторами (cosBetween).
+
     Необходимо: реализовать функцию sumByFunc таким образом, чтобы можно было раскомментировать функции sumScalars и sumCosines.
-    Функция sumScalars должна вычислять сумму скалярных произведений для пар векторов scalar(leftVec0, leftVec1) + scalar(rightVec0, rightVec1).
-    Функция sumCosines должна вычислять сумму косинусов углов между парами векторов cosBetween(leftVec0, leftVec1) + cosBetween(rightVec0, rightVec1).*/
+    Функция sumScalars должна вычислять сумму скалярных произведений для пар векторов
+    scalar(leftVec0, leftVec1) + scalar(rightVec0, rightVec1).
+    Функция sumCosines должна вычислять сумму косинусов углов между парами векторов
+    cosBetween(leftVec0, leftVec1) + cosBetween(rightVec0, rightVec1).*/
     /*Реализовать юнит-тесты в src/test/scala для функций sumScalars и sumCosines*/
     case class Vector2D(x: Double, y: Double)
     def abs(vec: Vector2D): Double = java.lang.Math.sqrt(vec.x * vec.x + vec.y * vec.y)
     def scalar(vec0: Vector2D, vec1: Vector2D): Double = vec0.x * vec1.x + vec0.y * vec1.y
     def cosBetween(vec0: Vector2D, vec1: Vector2D): Double = scalar(vec0, vec1) / abs(vec0) / abs(vec1)
-    //def sumByFunc(leftVec0: Vector2D, leftVec1: Vector2D, ???, rightVec0: Vector2D, rightVec1: Vector2D) = ???
-    /*
+    def sumByFunc(leftVec0: Vector2D, leftVec1: Vector2D, operation: (Vector2D,Vector2D) => Double,
+                  rightVec0: Vector2D, rightVec1: Vector2D) =
+    {
+        operation(leftVec0, leftVec1) + operation(rightVec0, rightVec1)
+    }
+
     def sumScalars(leftVec0: Vector2D, leftVec1: Vector2D, rightVec0: Vector2D, rightVec1: Vector2D): Double =
-        sumByFunc(leftVec0, leftVec1, scalar, rightVec0, rightVec1)
-    */
-    /*
+                   sumByFunc(leftVec0, leftVec1, scalar, rightVec0, rightVec1)
+
     def sumCosines(leftVec0: Vector2D, leftVec1: Vector2D, rightVec0: Vector2D, rightVec1: Vector2D): Double =
-        sumByFunc(leftVec0, leftVec1, cosBetween, rightVec0, rightVec1)
-    */
+                   sumByFunc(leftVec0, leftVec1, cosBetween, rightVec0, rightVec1)
+
 
 
 
@@ -71,6 +95,9 @@ object Exercises {
             "Chrome" ->   (3,   7.18),   "Cesium" ->    (7,   1.873), "Zirconium" -> (3,   6.45)
         )
 
-    def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] = ???
-
+    def sortByHeavyweight(ballsArray: Map[String, (Int, Double)] = balls): Seq[String] =
+        {
+            val sortBalls = ballsArray.toSeq.sortBy(balls => 4 * java.lang.Math.PI * Math.pow(balls._2._1, 3) / 3 * balls._2._2)
+            for (ball <- sortBalls) yield ball._1
+        }
 }
