@@ -22,9 +22,21 @@ object Exercises {
         result
     }
 
-    def findSumFunctional(items: List[Int], sumValue: Int) = {
-        (-1, -1)
+   def findSumFunctional(items: List[Int], sumValue: Int): (Int, Int) = {
+    def findPair(index: Int): (Int, Int) = {
+        if (index >= items.length) (-1, -1)
+        else {
+            val remaining = items.drop(index + 1)
+            val indexOfPair = remaining.indexWhere(num => num + items(index) == sumValue)
+            if (indexOfPair != -1) (index, index + indexOfPair + 1)
+            else findPair(index + 1)
+        }
     }
+
+    findPair(0)
+}
+
+    
 
 
     /**
@@ -48,9 +60,19 @@ object Exercises {
         }
     }
 
-    def tailRecRecursion(items: List[Int]): Int = {
-        1
+      import scala.annotation.tailrec@tailrec
+    
+def tailRecRecursion(items: List[Int], acc: Int = 1, index: Int = 1): Int = {
+    items match {
+        case head :: tail =>
+            val newValue = if (head % 2 == 0) head * acc + index else -1 * head * acc + index
+            tailRecRecursion(tail, newValue, index + 1)
+        
+        case _ => acc
     }
+}
+
+  
 
     /**
      * Задание №3
@@ -60,9 +82,23 @@ object Exercises {
      */
 
     def functionalBinarySearch(items: List[Int], value: Int): Option[Int] = {
-        None
+    @scala.annotation.tailrec
+    def binarySearch(start: Int, end: Int): Option[Int] = {
+        if (start > end) {
+            None
+        } else {
+            val mid = start + (end - start) / 2
+            items(mid) match {
+                case midValue if midValue == value => Some(mid)
+                case midValue if midValue < value => binarySearch(mid + 1, end)
+                case _ => binarySearch(start, mid - 1)
+            }
+        }
     }
 
+    binarySearch(0, items.length - 1)
+}
+   
     /**
      * Задание №4
      * Реализуйте функцию, которая генерирует список заданной длинны c именами.
@@ -71,12 +107,22 @@ object Exercises {
      * Именем является строка, не содержащая иных символов, кроме буквенных, а также начинающаяся с заглавной буквы.
      */
 
-    def generateNames(namesСount: Int): List[String] = {
-        if (namesСount < 0) throw new Throwable("Invalid namesCount")
-        Nil
-    }
+    import scala.util.Random
 
+def generateNames(namesCount: Int): List[String] = {
+  if (namesCount < 0) throw new IllegalArgumentException("Invalid namesCount")
+
+  def generateName: String = {
+    val alphabet = 'A' to 'Z'
+    val nameLength = Random.nextInt(5) + 1
+    val name = (1 to nameLength).map(_ => alphabet(Random.nextInt(alphabet.length))).mkString
+    name.head + name.tail.toLowerCase
+  }
+
+  (1 to namesCount).map(_ => generateName).toList
 }
+
+
 
 /**
  * Задание №5
@@ -111,7 +157,7 @@ object SideEffectExercise {
 
 
     class PhoneServiceSafety(unsafePhoneService: SimplePhoneService) {
-        def findPhoneNumberSafe(num: String) = ???
+        def findPhoneNumberSafe(num: String): Option[String] = ???
 
         def addPhoneToBaseSafe(phone: String) = ???
 
@@ -122,3 +168,5 @@ object SideEffectExercise {
         override def changePhone(oldPhone: String, newPhone: String): String = ???
     }
 }
+
+
