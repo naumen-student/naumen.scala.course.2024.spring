@@ -1,0 +1,50 @@
+#Только нормально написанные команды, без ошибочных (их было слишком много).
+
+PS C:\Users\Сергей Урусов> scala
+Welcome to Scala 2.12.19 (Java HotSpot(TM) 64-Bit Server VM, Java 19).
+Type in expressions for evaluation. Or try :help.
+
+scala>
+
+scala> name = "Sergey"
+name: String = Sergey
+
+scala> var lastName = "Urusov"
+lastName: String = Urusov
+
+scala> var greating = "Hello"
+greating: String = Hello
+
+scala> helloWorld = s"$greating, Scala, this is $name $lastName"
+helloWorld: String = Hello, Scala, this is Sergey Urusov
+
+scala> val HelloScala = (greating: String, name: String, lastName: String) => { println(s"${ greating }, Scala, this is ${ name } ${ lastName }") }
+HelloScala: (String, String, String) => Unit = $Lambda$1163/0x0000000801595bd0@6896ef29
+
+scala> HelloScala(greating, name, lastName)
+Hello, Scala, this is Sergey Urusov
+
+scala> greating = Hola
+<console>:12: error: not found: value Hola
+       greating = Hola
+                  ^
+
+scala> greating = "Hola"
+greating: String = Hola
+
+scala> name = name.reverse
+name: String = yegreS
+
+scala> lastName = lastName.reverse
+lastName: String = vosurU
+
+scala> HelloScala(greating, name, lastName)
+Hola, Scala, this is yegreS vosurU
+
+scala> greating = "Gutten Tag"
+greating: String = Gutten Tag
+
+scala> HelloScala(greating, name, lastName)
+Gutten Tag, Scala, this is yegreS vosurU
+
+scala>
